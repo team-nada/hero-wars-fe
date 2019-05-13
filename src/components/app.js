@@ -1,8 +1,9 @@
 import React from 'react';
 import Nav from './nav.js';
 import Game from './game.js';
-import Card from './card.js';
-
+import Win from './win.js';
+import Rules from './rules.js';
+import About from './about.js';
 
 class App extends React.Component {
   
@@ -29,8 +30,11 @@ class App extends React.Component {
   render(){
     return (
       <React.Fragment>
-      <Nav />
-      <Game />
+        <Nav />
+        <Game />
+        <Win />
+        <Rules />
+        <About />
       </React.Fragment>
     );
   }
