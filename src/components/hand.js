@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './card.js';
 
+
 class Hand extends React.Component {
   constructor(props){
     super(props);
@@ -12,12 +13,12 @@ class Hand extends React.Component {
   
   render(){
     return (
-      <React.Fragment>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </React.Fragment>
+        <div className="hand">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
     );
   }
 }

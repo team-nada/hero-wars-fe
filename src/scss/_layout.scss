@@ -1,0 +1,21 @@
+.hand{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card{
+  text-align: center;
+  border: 1px solid black;
+  width: 9em;
+  margin: 0 auto;
+  height: 12em;
+  
+  h1{
+    margin-top: 1em;
+  }
+  img{
+    margin: 1em;
+    width: 5em;
+  }
+}
