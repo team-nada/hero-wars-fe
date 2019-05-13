@@ -1,4 +1,8 @@
 import React from 'react';
+import Nav from './nav.js';
+import Game from './game.js';
+import Card from './card.js';
+
 
 class App extends React.Component {
   
@@ -24,7 +28,10 @@ class App extends React.Component {
 
   render(){
     return (
-      <p> Welcome To Hero wars</p>
+      <React.Fragment>
+      <Nav />
+      <Game />
+      </React.Fragment>
     );
   }
 }
