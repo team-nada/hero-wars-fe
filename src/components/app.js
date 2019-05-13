@@ -1,4 +1,9 @@
 import React from 'react';
+import Nav from './nav.js';
+import Game from './game.js';
+import Win from './win.js';
+import Rules from './rules.js';
+import About from './about.js';
 
 class App extends React.Component {
   
@@ -24,7 +29,13 @@ class App extends React.Component {
 
   render(){
     return (
-      <p> Welcome To Hero wars</p>
+      <React.Fragment>
+        <Nav />
+        <Game />
+        <Win />
+        <Rules />
+        <About />
+      </React.Fragment>
     );
   }
 }
