@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from './card.js';
-import Hand from './hand.js';
+import PlayerHand from './playerHand.js';
 import Score from './score.js';
+import ComputerHand from './computerHand.js';
 
 class Game extends React.Component {
   constructor(props){
@@ -11,8 +11,8 @@ class Game extends React.Component {
   render(){
     return (
       <React.Fragment>
-        <Card />
-        <Hand />
+        <ComputerHand name={this.props.name} image={this.props.image} power={this.props.power} affiliation={this.props.affiliation} race={this.props.race}/>
+        <PlayerHand image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
         <Score />
       </React.Fragment>
     );

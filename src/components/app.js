@@ -4,9 +4,10 @@ import Game from './game.js';
 import Win from './win.js';
 import Rules from './rules.js';
 import About from './about.js';
+import Test from './test.js';
 
 class App extends React.Component {
-  
+
   constructor(props) {
     super(props);
 
@@ -14,11 +15,21 @@ class App extends React.Component {
       username: null,
       view: 'home',
       gameCards: [],
-      activePlayerCards: {},
+      cards: {
+        playerCards:[],
+        computerCards:[]
+      },
       activeCompCards: {},
       userScore: 0,
       compScore: 0,
       win: false,
+      Card: '',
+      image: 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/60-bane.jpg',
+      power: 80,
+      name: 'Bane',
+      affiliation: 'Leage of Shadows',
+      race: 'Human',
+      active: false,
     }
   }
 
@@ -31,7 +42,14 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Nav />
-        <Game />
+        <Test />
+        <Game cards={this.state.cards}
+              active={this.state.active}
+              image={this.state.image}
+              power={this.state.power}
+              name={this.state.name}
+              affiliation={this.state.affiliation}
+              race={this.state.race}/>
         <Win />
         <Rules />
         <About />
