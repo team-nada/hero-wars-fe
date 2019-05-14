@@ -4,6 +4,8 @@ import Game from './game.js';
 import Win from './win.js';
 import Rules from './rules.js';
 import About from './about.js';
+import superagent from 'superagent';
+import { async } from 'q';
 // import Test from './test.js';
 
 class App extends React.Component {
@@ -17,38 +19,57 @@ class App extends React.Component {
       cards: {
         computerCards:[],
         playerCards:[],
-      },
-      activeCompCards: {},
-      userScore: 0,
-      compScore: 0,
-      win: false,
-      Card: '',
-      image: 'https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/60-bane.jpg',
-      power: 80,
-      name: 'Bane',
-      affiliation: 'Leage of Shadows',
-      race: 'Human',
-      active: false,
+      }
     }
   }
 
   // Makes call to server
-  getCards = () => {
+  getCards = async () => {
     console.log('get cards');
+    //superagent get from heroku 
+    let dataResponse = await superagent
+      .get('https://hero-wars-be.herokuapp.com/');
+
+    let characterArray = dataResponse.body;
+
+    let tempPlayerArray = [];
+    let tempComputerArray = [];
+
+    characterArray.forEach((hero, index) => {
+      if (index < 5){
+        tempPlayerArray.push(hero);
+      }else {
+        tempComputerArray.push(hero);
+      }
+    });
+      
+
+    this.setState({
+      cards: {
+        computerCards: tempComputerArray,
+        playerCards: tempPlayerArray
+      }
+    }, () => console.log('Current state:', this.state));
+
+    console.log('We got the goods: ', dataResponse.body);
+
+    
+    //put first 5 into computer cards, second 5 into playcards
+
+    //make sure everything passes/displays on cards
+  }
+
+  componentDidMount(){
+    this.getCards();
   }
 
   render(){
+
     return (
       <React.Fragment>
         <Nav />
         {/*<Test />*/}
-        <Game cards={this.state.cards}
-              active={this.state.active}
-              image={this.state.image}
-              power={this.state.power}
-              name={this.state.name}
-              affiliation={this.state.affiliation}
-              race={this.state.race}/>
+        <Game />
         <Win />
         <Rules />
         <About />

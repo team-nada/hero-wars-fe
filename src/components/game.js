@@ -9,11 +9,11 @@ class Game extends React.Component {
   // }
 
   render(){
-    console.log('Cards in Games Component:',this.props.cards.computerCards[0].name);
+    // console.log('Cards in Games Component:',this.props.cards.computerCards[0].name);
     return (
       <React.Fragment>
-        <ComputerHand cards={this.props.cards} name={this.props.name} image={this.props.image} power={this.props.power} affiliation={this.props.affiliation} race={this.props.race}/>
-        <PlayerHand cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
+        <ComputerHand />
+        <PlayerHand />
         <Score />
       </React.Fragment>
     );

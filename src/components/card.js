@@ -9,11 +9,11 @@ class Card extends React.Component {
     console.log(this.props.cards);
     return (
         <div className="card">
-          <h1>The Old Way: {this.props.name}</h1>
-          <h2>The New Way: {this.props.cards.computerCards[0].name}</h2>
-          <img src={this.props.image} alt="heroes img"/>
-          <h3>Power: {this.props.power}</h3>
-          <p>The character {this.props.name} is a part of the {this.props.race} race, and is affiliated with {this.props.affiliation}.</p>
+          <h1>The Old Way: </h1>
+          <h2>The New Way: </h2>
+          {/* <img src={this.props.image} alt="heroes img"/> */}
+          <h3>Power: </h3>
+          <p>The character {} is a part of the {} race, and is affiliated with {}.</p>
         </div>
     );
   }
