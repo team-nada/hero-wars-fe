@@ -4,16 +4,16 @@ import Score from './score.js';
 import ComputerHand from './computerHand.js';
 
 class Game extends React.Component {
-  // constructor(props){
-  //   super(props);
-  // }
+  constructor(props){
+    super(props);
+  }
 
   render(){
-    // console.log('Cards in Games Component:',this.props.cards.computerCards[0].name);
+    console.log('Cards in Games Component:',this.props);
     return (
       <React.Fragment>
-        <ComputerHand />
-        <PlayerHand />
+        <ComputerHand hand={this.props.computerCards}/>
+        <PlayerHand hand={this.props.playerCards}/>
         <Score />
       </React.Fragment>
     );

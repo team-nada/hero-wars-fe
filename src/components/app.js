@@ -53,10 +53,6 @@ class App extends React.Component {
 
     console.log('We got the goods: ', dataResponse.body);
 
-    
-    //put first 5 into computer cards, second 5 into playcards
-
-    //make sure everything passes/displays on cards
   }
 
   componentDidMount(){
@@ -69,7 +65,7 @@ class App extends React.Component {
       <React.Fragment>
         <Nav />
         {/*<Test />*/}
-        <Game />
+        <Game computerCards={this.state.cards.computerCards} playerCards={this.state.cards.playerCards}/>
         <Win />
         <Rules />
         <About />

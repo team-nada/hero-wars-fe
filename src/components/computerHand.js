@@ -3,25 +3,26 @@ import Card from './card.js';
 
 
 class ComputerHand extends React.Component {
-  // constructor(props){
-  //   super(props);
-  //
-  //   this.state = {
-  //
-  //   }
-  // }
+  constructor(props){
+    super(props);
+  
+    this.state = {
+  
+    }
+  }
 
   render(){
+    // console.log('Hand received: ', this.props);
     return (
       <div>
         <div className="hand">
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
+          <Card card={this.props.hand[0]}/>
+          <Card card={this.props.hand[1]}/>
+          <Card card={this.props.hand[2]}/>
+          <Card card={this.props.hand[3]}/>
+          <Card card={this.props.hand[4]}/>
         </div>
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
+        <Card card={this.props.hand[2]}/>
       </div>
     );
   }
