@@ -10,6 +10,7 @@ class Card extends React.Component {
         <div className="card">
           <h1>Character Name</h1>
           <img src="https://static.tvtropes.org/pmwiki/pub/images/rsz_superheroes2.png" alt="heroes img"/>
+          <h3>Power: 50</h3>
           <p>Description adfhasfa
              asdfadsfads
              asdfadsfads
