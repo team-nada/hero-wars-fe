@@ -4,7 +4,7 @@ import Game from './game.js';
 import Win from './win.js';
 import Rules from './rules.js';
 import About from './about.js';
-import Test from './test.js';
+// import Test from './test.js';
 
 class App extends React.Component {
 
@@ -14,10 +14,9 @@ class App extends React.Component {
     this.state = {
       username: null,
       view: 'home',
-      gameCards: [],
       cards: {
+        computerCards:[],
         playerCards:[],
-        computerCards:[]
       },
       activeCompCards: {},
       userScore: 0,
@@ -42,7 +41,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Nav />
-        <Test />
+        {/*<Test />*/}
         <Game cards={this.state.cards}
               active={this.state.active}
               image={this.state.image}
