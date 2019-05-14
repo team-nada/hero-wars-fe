@@ -25,7 +25,7 @@ class Test extends React.Component{
 
     return (
       <React.Fragment>
-]        <p>This will say something: {this.state.backendData}</p>
+]        <p>{this.state.backendData}</p>
       </React.Fragment>
     )
   }
