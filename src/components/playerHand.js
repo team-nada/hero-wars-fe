@@ -15,13 +15,13 @@ class PlayerHand extends React.Component {
   render(){
     return (
       <div>
-        <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
+        <Card card={this.props.hand[2]}/>
         <div className="hand">
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
-          <Card cards={this.props.cards} image={this.props.image} power={this.props.power} name={this.props.name} affiliation={this.props.affiliation} race={this.props.race}/>
+          <Card card={this.props.hand[0]}/>
+          <Card card={this.props.hand[1]}/>
+          <Card card={this.props.hand[2]}/>
+          <Card card={this.props.hand[3]}/>
+          <Card card={this.props.hand[4]}/>
         </div>
       </div>
     );
