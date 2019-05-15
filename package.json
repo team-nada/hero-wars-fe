@@ -8,6 +8,8 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
+    "react-spring": "^8.0.20",
+    "react-use-gesture": "^5.0.1",
     "superagent": "^5.0.5"
   },
   "scripts": {
