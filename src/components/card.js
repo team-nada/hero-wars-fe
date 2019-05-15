@@ -6,7 +6,7 @@ class Card extends React.Component {
   }
 
   render(){
-    console.log('Card received: ', this.props);
+    // console.log('Card received: ', this.props);
     return (
         <div className="card" onClick={ () => this.props.handleClickFunction(this.props.card, this, this.props.owner)}>
           <h2>{this.props.card ? this.props.card.name : 'name'}</h2>

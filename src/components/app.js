@@ -65,24 +65,31 @@ class App extends React.Component {
   handleCardClick = (cardData, cardComponent, owner) => {
     console.log('Clicked on card:', cardData, ' Owned by: ', owner, ' Full React Component: ', cardComponent);
 
-    //check card owner
-    //check if active is occupied
-    //set the card object into state
+    //Checks who owns the card, and whether or not that player has an active card
+    //If no active card, update it to the clicked card
     if (owner === 'player' && this.state.playerActiveCard.name === 'standby' ){
       this.setState({
         playerActiveCard: cardData
-      });
-      console.log(`Current active player card is: `, this.state.playerActiveCard);
+      }, this.executeGame);
     }else if (owner === 'computer' && this.state.computerActiveCard.name === 'standby'){
       this.setState({
         computerActiveCard: cardData
-      });
+      }, this.executeGame);
+
     }else {
-      console.log('Unknown Owner');
+      console.log('Unknown Owner, or active slot is already taken');
     }
 
-    
+  }
 
+  executeGame(){
+    console.log('Current active cards: Player: ', this.state.playerActiveCard, ' Computer: ', this.state.computerActiveCard);
+
+    //If both active cards are ready, execute game logic
+    if(this.state.playerActiveCard.name !== 'standby' && this.state.computerActiveCard.name !== 'standby'){
+      console.log('FIGHT!');
+
+    }
   }
 
   componentDidMount(){
