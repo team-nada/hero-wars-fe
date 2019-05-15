@@ -89,7 +89,27 @@ class App extends React.Component {
     if(this.state.playerActiveCard.name !== 'standby' && this.state.computerActiveCard.name !== 'standby'){
       console.log('FIGHT!');
 
+      //player power - computer power. If positive, we know player won, etc. 
+      let conflictResult = this.state.playerActiveCard.power - this.state.computerActiveCard.power;
+      if( conflictResult > 0){
+        console.log('Player won');
+        let newScore = this.state.playersScore + 1;
+        this.setState({
+          playersScore: newScore
+        }, this.resetActiveCard)
+      }else if (conflictResult < 0){
+        console.log('Computer won');
+        let newScore = this.state.computerScore + 1;
+        this.setState({
+          computerScore: newScore
+        }, this.resetActiveCard)
+      }
+
     }
+  }
+
+  resetActiveCard = () => {
+    console.log(`Current score: Player: ${this.state.playersScore}, Computer: ${this.state.computerScore}`);
   }
 
   componentDidMount(){
