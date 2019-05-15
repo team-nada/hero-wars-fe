@@ -5,14 +5,16 @@ class Home extends React.Component {
   
   render(){
     return (
-      <>
-      <h1>Hero Wars</h1>
-      <form onSubmit={this.props.handleSubmit}>
-        <label>Enter your name:</label>
-        <input type="text" name="username" /><br />
-        <button type="submit">Start</button>
-      </form>
-      </>
+      <div className="container">
+      <div className="splash">
+        <h1 className="intro-title">Hero Wars</h1>
+        <form onSubmit={this.props.handleSubmit}>
+          <label>Enter your name:</label><br />
+          <input className="user-input" type="text" name="username" /><br />
+          <button className="user-submit" type="submit">Start</button>
+        </form>
+      </div>
+      </div>
     );
   }
 }
