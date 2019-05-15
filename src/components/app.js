@@ -127,11 +127,11 @@ class App extends React.Component {
   //handles username submission
   handleSubmit = (e) => {
     e.preventDefault();
-    let username = e.target.children[1].value;
+    let username = e.target.children[2].value;
     this.setState({
       username
     });
-    console.log(e.target.children[1].value);
+    console.log(e.target.children[2]);
   }
 
   handlePlayAgain = (e) => {

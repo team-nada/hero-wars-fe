@@ -12,7 +12,7 @@ const routing = (
   <Router>
     <>
     <nav>
-      <ul>
+      <ul className="nav-menu">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/rules">Rules</Link></li>
         <li><Link to="/about">About Us</Link></li>

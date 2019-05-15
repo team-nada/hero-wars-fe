@@ -1,3 +1,56 @@
+.nav-menu {
+  margin: 30px;
+}
+
+.nav-menu li {
+  display: inline;
+  margin: 15px;
+  padding: 15px;
+}
+
+.intro-title {
+  margin-top: 200px;
+  font-size: 80px;
+}
+
+label {
+  margin: 15px;
+}
+
+.user-input {
+  margin: 15px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.user-submit {
+  margin: 15px;
+  padding: 15px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 3px 3px rgb(233, 233, 233);
+  font-size: 16px;
+  color: white;
+  background-color: #3e83d7;
+}
+
+.user-submit:hover {
+  background-color: #76aef2;
+  color: white;
+}
+
+
+.container {
+  height: 100vh;
+}
+
+.splash {
+}
+
 .hand{
   display: flex;
   flex-direction: row;
