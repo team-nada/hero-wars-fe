@@ -30,7 +30,7 @@ class App extends React.Component {
   // Makes call to server
   getCards = async () => {
     console.log('get cards');
-    //superagent get from heroku 
+    //superagent get from heroku
     let dataResponse = await superagent
       .get('https://hero-wars-be.herokuapp.com/');
 
@@ -46,7 +46,7 @@ class App extends React.Component {
         tempComputerArray.push(hero);
       }
     });
-      
+
 
     this.setState({
       cards: {
@@ -78,6 +78,16 @@ class App extends React.Component {
     console.log(e.target.children[1].value);
   }
 
+  handlePlayAgain = (e) => {
+    e.preventDefault();
+    this.getCards();
+    this.setState({username: this.username});
+  }
+
+    handleMainMenu = (e) => {
+    e.preventDefault();
+    this.setState({username: null});
+  }
 
 
   render(){
@@ -90,11 +100,13 @@ class App extends React.Component {
     } else {
       return (
         <>
-          <Game computerCards={this.state.cards.computerCards} 
-          playerCards={this.state.cards.playerCards} 
-          playerActiveCard={this.state.playerActiveCard} 
+          <Game computerCards={this.state.cards.computerCards}
+          playerCards={this.state.cards.playerCards}
+          playerActiveCard={this.state.playerActiveCard}
           computerActiveCard={this.state.computerActiveCard}
-          handleClickFunction={this.handleCardClick}/>
+          handleClickFunction={this.handleCardClick}
+          handlePlayAgain={this.handlePlayAgain}
+          handleMainMenu={this.handleMainMenu}/>
         </>
       );
     }
