@@ -7,7 +7,6 @@ import Rules from './rules.js';
 import About from './about.js';
 import superagent from 'superagent';
 import { async } from 'q';
-// import Test from './test.js';
 
 class App extends React.Component {
 
@@ -20,7 +19,11 @@ class App extends React.Component {
       cards: {
         computerCards:[],
         playerCards:[],
-      }
+      },
+      playerActiveCard: {},
+      computerActiveCard: {},
+      playersScore: 0,
+      computerScore: 0
     }
   }
 
@@ -56,6 +59,11 @@ class App extends React.Component {
 
   }
 
+  //Get click from gameboard and handle game logic
+  handleCardClick(card){
+    console.log(card);
+  }
+
   componentDidMount(){
     this.getCards();
   }
@@ -70,6 +78,8 @@ class App extends React.Component {
     console.log(e.target.children[1].value);
   }
 
+
+
   render(){
     if (this.state.username === null) {
       return (
@@ -80,7 +90,11 @@ class App extends React.Component {
     } else {
       return (
         <>
-          <Game username={this.state.username} computerCards={this.state.cards.computerCards} playerCards={this.state.cards.playerCards}/>
+          <Game computerCards={this.state.cards.computerCards} 
+          playerCards={this.state.cards.playerCards} 
+          playerActiveCard={this.state.playerActiveCard} 
+          computerActiveCard={this.state.computerActiveCard}
+          handleClickFunction={this.handleCardClick}/>
         </>
       );
     }
