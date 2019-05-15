@@ -19,10 +19,12 @@ class Game extends React.Component {
         <ComputerHand hand={this.props.computerCards}
           activeCard={this.props.computerActiveCard}
           handleClickFunction={this.props.handleClickFunction}/>
+        <Score name={'Ultron'} score={this.props.computerScore}/>
+        <Score name={this.props.username} score={this.props.playerScore}/>
         <PlayerHand hand={this.props.playerCards}
           activeCard={this.props.playerActiveCard}
           handleClickFunction={this.props.handleClickFunction}/>
-        <Score />
+        
 
         {/*Need to add logic to display the Win page*/}
 
