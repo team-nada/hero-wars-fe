@@ -1,5 +1,6 @@
 import React from 'react';
-import Nav from './nav.js';
+import { Link } from 'react-router-dom';
+import Home from './home.js';
 import Game from './game.js';
 import Win from './win.js';
 import Rules from './rules.js';
@@ -27,16 +28,30 @@ class App extends React.Component {
     console.log('get cards');
   }
 
+  //handles username submission
+  handleSubmit = (e) => {
+    e.preventDefault();
+    let username = e.target.children[1].value;
+    this.setState({
+      username
+    });
+    console.log(e.target.children[1].value);
+  }
+
   render(){
-    return (
-      <React.Fragment>
-        <Nav />
-        <Game />
-        <Win />
-        <Rules />
-        <About />
-      </React.Fragment>
-    );
+    if (this.state.username === null) {
+      return (
+        <>
+          <Home handleSubmit={this.handleSubmit} username={this.state.username}/>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Game username={this.state.username}/>
+        </>
+      );
+    }
   }
 }
 

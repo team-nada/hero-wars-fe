@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import App from './components/app.js';
+import Game from './components/game.js';
 import About from './components/about.js';
 import Rules from './components/rules.js';
 import './scss/core.scss';
 
 const routing = (
+
   <Router>
     <>
     <nav>
@@ -17,6 +19,7 @@ const routing = (
       </ul>
     </nav>
       <Route exact path="/" component={App} />
+      <Route path="/game" component={Game} />
       <Route path="/rules" component={Rules} />
       <Route path="/about" component={About} />
     </>
