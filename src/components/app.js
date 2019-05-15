@@ -55,13 +55,11 @@ class App extends React.Component {
       }
     }, () => console.log('Current state:', this.state));
 
-    console.log('We got the goods: ', dataResponse.body);
-
   }
 
   //Get click from gameboard and handle game logic
-  handleCardClick(cardData, cardComponent){
-    console.log('Clicked on card:', cardData, ' Full React Component: ', cardComponent);
+  handleCardClick(cardData, cardComponent, owner){
+    console.log('Clicked on card:', cardData, ' Owned by: ', owner, ' Full React Component: ', cardComponent);
 
     
     
