@@ -4,16 +4,15 @@ class Card extends React.Component {
   constructor(props){
     super(props);
   }
-  
+
   render(){
+    console.log('Card received: ', this.props);
     return (
         <div className="card">
-          <h1>Character Name</h1>
-          <img src="https://static.tvtropes.org/pmwiki/pub/images/rsz_superheroes2.png" alt="heroes img"/>
-          <p>Description adfhasfa
-             asdfadsfads
-             asdfadsfads
-          </p>
+          <h2>{this.props.card ? this.props.card.name : 'name'}</h2>
+          <img src={this.props.card ? this.props.card.image_url : 'https://static.tvtropes.org/pmwiki/pub/images/rsz_superheroes2.png'} alt="heroes img"/>
+          <h3>{this.props.card ? this.props.card.power : '1'}</h3>
+          <p>The character {this.props.card ? this.props.card.name : 'name'} is a part of the {this.props.card ? this.props.card.race : 'special'} race, and is affiliated with {this.props.card ? this.props.card.groupaffiliation : 'friends'}.</p>
         </div>
     );
   }
