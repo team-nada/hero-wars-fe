@@ -12,8 +12,12 @@ class Game extends React.Component {
     console.log('Cards in Games Component:',this.props);
     return (
       <React.Fragment>
-        <ComputerHand hand={this.props.computerCards}/>
-        <PlayerHand hand={this.props.playerCards}/>
+        <ComputerHand hand={this.props.computerCards} 
+          activeCard={this.props.computerActiveCard}
+          handleClickFunction={this.props.handleClickFunction}/>
+        <PlayerHand hand={this.props.playerCards} 
+          activeCard={this.props.playerActiveCard}
+          handleClickFunction={this.props.handleClickFunction}/>
         <Score />
       </React.Fragment>
     );

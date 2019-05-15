@@ -16,13 +16,19 @@ class ComputerHand extends React.Component {
     return (
       <div>
         <div className="hand">
-          <Card card={this.props.hand[0]}/>
-          <Card card={this.props.hand[1]}/>
-          <Card card={this.props.hand[2]}/>
-          <Card card={this.props.hand[3]}/>
-          <Card card={this.props.hand[4]}/>
+          <Card card={this.props.hand[0]}
+            handleClickFunction={this.props.handleClickFunction}/>
+          <Card card={this.props.hand[1]}
+            handleClickFunction={this.props.handleClickFunction}/>
+          <Card card={this.props.hand[2]}
+            handleClickFunction={this.props.handleClickFunction}/>
+          <Card card={this.props.hand[3]}
+            handleClickFunction={this.props.handleClickFunction}/>
+          <Card card={this.props.hand[4]}
+            handleClickFunction={this.props.handleClickFunction}/>
         </div>
-        <Card card={this.props.hand[2]}/>
+        <Card card={this.props.activeCard}
+          handleClickFunction={this.props.handleClickFunction}/>
       </div>
     );
   }
