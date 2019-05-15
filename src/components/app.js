@@ -110,6 +110,14 @@ class App extends React.Component {
 
   resetActiveCard = () => {
     console.log(`Current score: Player: ${this.state.playersScore}, Computer: ${this.state.computerScore}`);
+    this.setState({
+      playerActiveCard: {
+        name: 'standby'
+      },
+      computerActiveCard: {
+        name: 'standby'
+      }
+    })
   }
 
   componentDidMount(){
