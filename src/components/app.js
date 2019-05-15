@@ -90,8 +90,7 @@ class App extends React.Component {
     } else {
       return (
         <>
-          <Game username={this.state.username}
-          computerCards={this.state.cards.computerCards} 
+          <Game computerCards={this.state.cards.computerCards} 
           playerCards={this.state.cards.playerCards} 
           playerActiveCard={this.state.playerActiveCard} 
           computerActiveCard={this.state.computerActiveCard}
