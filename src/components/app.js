@@ -59,8 +59,12 @@ class App extends React.Component {
   }
 
   //Get click from gameboard and handle game logic
-  handleCardClick(card){
-    console.log(card);
+  handleCardClick(cardData, cardComponent){
+    console.log('Clicked on card:', cardData, ' Full React Component: ', cardComponent);
+
+    
+    
+
   }
 
   componentDidMount(){
