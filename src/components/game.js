@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Card from './card.js';
-import Hand from './hand.js';
 import PlayerHand from './playerHand.js';
 import Score from './score.js';
 import ComputerHand from './computerHand.js';
