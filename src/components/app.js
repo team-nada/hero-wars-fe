@@ -20,8 +20,12 @@ class App extends React.Component {
         computerCards:[],
         playerCards:[],
       },
-      playerActiveCard: {},
-      computerActiveCard: {},
+      playerActiveCard: {
+        name: 'standby'
+      },
+      computerActiveCard: {
+        name: 'standby'
+      },
       playersScore: 0,
       computerScore: 0
     }
@@ -58,10 +62,25 @@ class App extends React.Component {
   }
 
   //Get click from gameboard and handle game logic
-  handleCardClick(cardData, cardComponent, owner){
+  handleCardClick = (cardData, cardComponent, owner) => {
     console.log('Clicked on card:', cardData, ' Owned by: ', owner, ' Full React Component: ', cardComponent);
 
-    
+    //check card owner
+    //check if active is occupied
+    //set the card object into state
+    if (owner === 'player' && this.state.playerActiveCard.name === 'standby' ){
+      this.setState({
+        playerActiveCard: cardData
+      });
+      console.log(`Current active player card is: `, this.state.playerActiveCard);
+    }else if (owner === 'computer' && this.state.computerActiveCard.name === 'standby'){
+      this.setState({
+        computerActiveCard: cardData
+      });
+    }else {
+      console.log('Unknown Owner');
+    }
+
     
 
   }
