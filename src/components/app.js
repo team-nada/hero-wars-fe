@@ -68,10 +68,15 @@ class App extends React.Component {
     //Checks who owns the card, and whether or not that player has an active card
     //If no active card, update it to the clicked card
     if (owner === 'player' && this.state.playerActiveCard.name === 'standby' ){
+      //TODO: pop card off player array based on name 
+      // use indexOf b/c it only does first item found? (Don't want to delete both if duplicate exists in hand)
+
       this.setState({
         playerActiveCard: cardData
       }, this.executeGame);
     }else if (owner === 'computer' && this.state.computerActiveCard.name === 'standby'){
+      //TODO: pop card off player array based on name
+
       this.setState({
         computerActiveCard: cardData
       }, this.executeGame);
@@ -175,7 +180,9 @@ class App extends React.Component {
           computerActiveCard={this.state.computerActiveCard}
           handleClickFunction={this.handleCardClick}
           handlePlayAgain={this.handlePlayAgain}
-          handleMainMenu={this.handleMainMenu}/>
+          handleMainMenu={this.handleMainMenu}
+          playerScore={this.state.playerScore}
+          computerScore={this.state.computerScore}/>
         </>
       );
     }
@@ -183,3 +190,4 @@ class App extends React.Component {
 }
 
 export default App;
+
