@@ -20,8 +20,12 @@ class App extends React.Component {
         computerCards:[],
         playerCards:[],
       },
-      playerActiveCard: {},
-      computerActiveCard: {},
+      playerActiveCard: {
+        name: 'standby'
+      },
+      computerActiveCard: {
+        name: 'standby'
+      },
       playersScore: 0,
       computerScore: 0
     }
@@ -30,7 +34,7 @@ class App extends React.Component {
   // Makes call to server
   getCards = async () => {
     console.log('get cards');
-    //superagent get from heroku 
+    //superagent get from heroku
     let dataResponse = await superagent
       .get('https://hero-wars-be.herokuapp.com/');
 
@@ -46,7 +50,7 @@ class App extends React.Component {
         tempComputerArray.push(hero);
       }
     });
-      
+
 
     this.setState({
       cards: {
@@ -55,13 +59,30 @@ class App extends React.Component {
       }
     }, () => console.log('Current state:', this.state));
 
-    console.log('We got the goods: ', dataResponse.body);
-
   }
 
   //Get click from gameboard and handle game logic
-  handleCardClick(card){
-    console.log(card);
+  handleCardClick = (cardData, cardComponent, owner) => {
+    console.log('Clicked on card:', cardData, ' Owned by: ', owner, ' Full React Component: ', cardComponent);
+
+    //check card owner
+    //check if active is occupied
+    //set the card object into state
+    if (owner === 'player' && this.state.playerActiveCard.name === 'standby' ){
+      this.setState({
+        playerActiveCard: cardData
+      });
+      console.log(`Current active player card is: `, this.state.playerActiveCard);
+    }else if (owner === 'computer' && this.state.computerActiveCard.name === 'standby'){
+      this.setState({
+        computerActiveCard: cardData
+      });
+    }else {
+      console.log('Unknown Owner');
+    }
+
+    
+
   }
 
   componentDidMount(){
@@ -78,6 +99,16 @@ class App extends React.Component {
     console.log(e.target.children[1].value);
   }
 
+  handlePlayAgain = (e) => {
+    e.preventDefault();
+    this.getCards();
+    this.setState({username: this.username});
+  }
+
+    handleMainMenu = (e) => {
+    e.preventDefault();
+    this.setState({username: null});
+  }
 
 
   render(){
@@ -90,11 +121,14 @@ class App extends React.Component {
     } else {
       return (
         <>
-          <Game computerCards={this.state.cards.computerCards} 
-          playerCards={this.state.cards.playerCards} 
-          playerActiveCard={this.state.playerActiveCard} 
+          <Game username={this.state.username}
+          computerCards={this.state.cards.computerCards}
+          playerCards={this.state.cards.playerCards}
+          playerActiveCard={this.state.playerActiveCard}
           computerActiveCard={this.state.computerActiveCard}
-          handleClickFunction={this.handleCardClick}/>
+          handleClickFunction={this.handleCardClick}
+          handlePlayAgain={this.handlePlayAgain}
+          handleMainMenu={this.handleMainMenu}/>
         </>
       );
     }
