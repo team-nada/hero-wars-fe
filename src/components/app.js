@@ -26,7 +26,7 @@ class App extends React.Component {
       computerActiveCard: {
         name: 'standby'
       },
-      playersScore: 0,
+      playerScore: 0,
       computerScore: 0
     }
   }
@@ -93,23 +93,35 @@ class App extends React.Component {
       let conflictResult = this.state.playerActiveCard.power - this.state.computerActiveCard.power;
       if( conflictResult > 0){
         console.log('Player won');
-        let newScore = this.state.playersScore + 1;
+        let newScore = this.state.playerScore + 1;
+
         this.setState({
-          playersScore: newScore
+          playerScore: newScore
         }, this.resetActiveCard)
+
       }else if (conflictResult < 0){
         console.log('Computer won');
         let newScore = this.state.computerScore + 1;
+
         this.setState({
           computerScore: newScore
         }, this.resetActiveCard)
+
+      }else if (conflictResult === 0){
+        console.log('Tie!');
+
+        this.setState({
+          computerScore: this.state.computerScore + 1,
+          playerScore: this.state.playerScore + 1
+        }, this.resetActiveCard)
+
       }
 
     }
   }
 
   resetActiveCard = () => {
-    console.log(`Current score: Player: ${this.state.playersScore}, Computer: ${this.state.computerScore}`);
+    console.log(`Current score: Player: ${this.state.playerScore}, Computer: ${this.state.computerScore}`);
     this.setState({
       playerActiveCard: {
         name: 'standby'
