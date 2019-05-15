@@ -12,7 +12,7 @@ class Game extends React.Component {
   }
 
   render(){
-    console.log('Cards in Games Component:',this.props);
+    // console.log('Cards in Games Component:',this.props);
     return (
       <React.Fragment>
         <h2>{this.props.username} vs. Computer</h2>
