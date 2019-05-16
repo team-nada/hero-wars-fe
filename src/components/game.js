@@ -38,13 +38,11 @@ class Game extends React.Component {
     return (
       <React.Fragment>
         <div className= "gameBoard">
-        <h2 className="pVSc">{this.props.username} vs. Computer</h2>
+        <div className="pVSc"><Score score={this.props.playerScore}/> {this.props.username} vs. Jarvis <Score score={this.props.computerScore}/></div>
         <ComputerBoard hand={this.props.computerCards}
           activeCard={this.props.computerActiveCard}
           handleClickFunction={this.props.handleClickFunction}/>
 
-        <Score name={'Ultron'} score={this.props.computerScore}/>
-        <Score name={this.props.username} score={this.props.playerScore}/>
         <PlayerBoard hand={this.props.playerCards}
           activeCard={this.props.playerActiveCard}
           handleClickFunction={this.props.handleClickFunction}/>

@@ -95,9 +95,9 @@ label {
 .card {
   text-align: center;
   // border: 1px solid black;
-  width: 13em;
+  width: 6.5em;
   margin: 0 auto;
-  height: 17em;
+  height: 8.5em;
   background-image: url(../images/cardLay.png);
   background-size: cover;
   position: relative;
@@ -110,28 +110,30 @@ label {
 
   h2 {
     position: absolute;
-    top: 14px;
-    left: 45px;
+    top: 6px;
+    left: 10.5px;
+    font-size: 9px;
     color: white;
   }
   h3{
     color: white;
-    font-size: 25px;
-    padding-top: 35px;
+    font-size: 12.5px;
+    padding-top: 17px;
   
   }
   img {
-    margin-top: 33px;
-    width: 188px;
-    height: 140px;
+    margin-top: 17px;
+    width: 94px;
+    height: 70px;
     z-index: 1;
   }
 }
 
 .placeholder {
-  width: 13em;
+  border: 1px dashed black;
+  width: 6.5em;
   margin: 0 auto;
-  height: 17em;
+  height: 8.5em;
   position: relative;
 
 
@@ -141,8 +143,6 @@ label {
 
   h2 {
     position: absolute;
-    top: 14px;
-    left: 75px;
   }
   img {
     margin-top: 33px;
@@ -158,7 +158,8 @@ label {
 }
 .pVSc{
   color: white;
-  font-size: 30px;
+  font-size: 15px;
+  display: inline;
   // font-family: 'Stardos Stencil', cursive;
   font-family: 'Bungee Shade', cursive;
   display: block;
