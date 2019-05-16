@@ -10,7 +10,7 @@ class PlayerBoard extends React.Component {
   render(){
     let cards = [];
     if(this.props.hand){
-      cards = this.props.hand.map((card, i) => <li key={i}> <Card card={card} owner={'player'} handleClickFunction={this.props.handleClickFunction}/></li>);
+      cards = this.props.hand.map((card, i) => <li key={i}> <Card card={card} handId={i} owner={'player'} handleClickFunction={this.props.handleClickFunction}/></li>);
     }
 
     return (
