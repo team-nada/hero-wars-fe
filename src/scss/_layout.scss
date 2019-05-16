@@ -80,7 +80,7 @@ label {
 .splash {
 }
 
-.hand{
+.hand {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -93,7 +93,7 @@ label {
 
 }
 
-.card{
+.card {
   text-align: center;
   border: 1px solid black;
   width: 13em;
@@ -104,22 +104,48 @@ label {
   position: relative;
 
 
-  h1{
+  h1 {
     margin-top: 0px;
   }
 
-  h2{
+  h2 {
     position: absolute;
     top: 14px;
     left: 75px;
   }
-  img{
+  img {
     margin-top: 33px;
     width: 185px;
     height: 140px;
     z-index: 1;
   }
 }
-.gameBoard{
+
+.placeholder {
+  width: 13em;
+  margin: 0 auto;
+  height: 17em;
+  position: relative;
+
+
+  h1 {
+    margin-top: 0px;
+  }
+
+  h2 {
+    position: absolute;
+    top: 14px;
+    left: 75px;
+  }
+  img {
+    margin-top: 33px;
+    width: 185px;
+    height: 140px;
+    z-index: 1;
+  }
+}
+
+
+.gameBoard {
   background-image: url(../images/comic_background.jpg);
 }
