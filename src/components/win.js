@@ -11,7 +11,7 @@ class Win extends React.Component {
     return (
       <React.Fragment>
 
-        <div className="winPage">
+        <div className="gameFooter">
         <p id="final_results">Player Score: {this.props.playerScore}  Computer Score: {this.props.computerScore}</p>
         {(this.props.computerScore > this.props.playerScore) ? <p>Computer Wins</p> : 
           (this.props.computerScore < this.props.playerScore) ? <p>Player Wins</p> : 
