@@ -62,23 +62,37 @@ class App extends React.Component {
   }
 
   //Get click from gameboard and handle game logic
-  handleCardClick = (cardData, cardComponent, owner) => {
+  handleCardClick = (cardData, cardComponent, owner, handId) => {
     console.log('Clicked on card:', cardData, ' Owned by: ', owner, ' Full React Component: ', cardComponent);
 
     //Checks who owns the card, and whether or not that player has an active card
     //If no active card, update it to the clicked card
     if (owner === 'player' && this.state.playerActiveCard.name === 'standby' ){
       //TODO: pop card off player array based on name 
-      // use indexOf b/c it only does first item found? (Don't want to delete both if duplicate exists in hand)
+      console.log(`Clicked on id: ${handId}`);
+      console.log(`Card at that index:  `, this.state.cards.playerCards[handId]);
+
+      this.state.cards.playerCards.splice(handId, 1);
 
       this.setState({
-        playerActiveCard: cardData
+        playerActiveCard: cardData,
+        cards: {
+          playerCards: this.state.cards.playerCards,
+          computerCards: this.state.cards.computerCards
+        }
       }, this.executeGame);
     }else if (owner === 'computer' && this.state.computerActiveCard.name === 'standby'){
       //TODO: pop card off player array based on name
+      console.log(`Clicked on id: ${handId}`);
+
+      this.state.cards.computerCards.splice(handId, 1);
 
       this.setState({
-        computerActiveCard: cardData
+        computerActiveCard: cardData,
+        cards: {
+          playerCards: this.state.cards.playerCards,
+          computerCards: this.state.cards.computerCards
+        }
       }, this.executeGame);
 
     }else {
