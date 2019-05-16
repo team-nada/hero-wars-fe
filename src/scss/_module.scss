@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+// Rules Componenent CSS
+.rule-container{
+  display: grid;
+  grid: 100px / auto auto;
+  grid-gap: 10px;
+  // background-color: #2196F3;
+  background-image: url(../images/comic_background.jpg);
+
+  padding: 20px;
+  height: 86vh;
+
+}
+
+.rule-container > div {
+  font-family: 'Abel', sans-serif;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 40px 0;
+  height: 515px;
+}
+
+#item1{
+  padding: 7em;
+
+  h1{
+    padding-bottom: 1em;
+    font-size: 35px;
+  }
+}
+
+#item2{
+  padding: 7em;
+
+  h1{
+    font-size: 45px;
+    padding-bottom: 20px;
+  }
+}
+
+.rules{
+  text-align: left;
+}
+
+ol{
+  list-style-type: decimal;
+}
+
+ol li{
+  font-size: 18px;
+  padding-bottom: 10px;
+}
