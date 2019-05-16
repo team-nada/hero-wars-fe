@@ -3,24 +3,26 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:700');
 @import url('https://fonts.googleapis.com/css?family=Stardos+Stencil');
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
-
+@import url('https://fonts.googleapis.com/css?family=Wallpoet');
 
 nav{
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(105, 136, 204) 100%);
-  height: 100px;
+  height: 25px;
   font-family: 'Oswald', sans-serif;
+  z-index: 1;
+  position: relative;
 }
 
 .nav-menu {
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 .nav-menu li {
   display: inline;
   margin: 15px;
   padding: 15px;
-  font-size: 40px;
+  font-size: 15px;
 }
 
 .nav-menu li:hover{
@@ -33,22 +35,22 @@ nav{
 }
 
 .nav-menu a:hover{
-  padding: 1em;
+  padding: .5em;
   color: rgb(78, 77, 77);
   border-radius: 5px;
   transition: all 0.5s ease;
   background-color: rgba(255, 255, 255,0.9);
-
-
 }
 
 .intro-title {
-  margin-top: 200px;
-  font-size: 80px;
+  // margin-top: 200px;
+  font-size: 120px;
+  font-family: 'Wallpoet', cursive;
 }
 
 label {
   margin: 15px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .user-input {
@@ -77,23 +79,44 @@ label {
   color: white;
 }
 
+.home-container {
+  height: 95vh;
+  background-image: url(../images/comic_background.jpg);
+}
 
-.container {
-  height: 100vh;
+.splash{
+  padding-top: 120px;
 }
 
 .hand {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.computer-board {
+  position: absolute;
+  top: -35px;
+  z-index: 0;
+  left: 192.5px;
+  right: 192.5px;
+}
+
+.player-board {
+  position: relative;
+  top: 223px;
+}
+
+.player-hand {
+  padding-bottom: 40px;
 }
 
 .card {
   text-align: center;
   // border: 1px solid black;
-  width: 13em;
+  width: 6.5em;
   margin: 0 auto;
-  height: 17em;
+  height: 8.5em;
   background-image: url(../images/cardLay.png);
   background-size: cover;
   position: relative;
@@ -106,27 +129,31 @@ label {
 
   h2 {
     position: absolute;
-    top: 14px;
-    left: 45px;
+    top: 6px;
+    left: 10.5px;
+    font-size: 9px;
     color: white;
   }
   h3{
     color: white;
-    font-size: 25px;
+    font-size: 12.5px;
+    padding-top: 17px;
   
   }
   img {
-    margin-top: 33px;
-    width: 188px;
-    height: 140px;
+    margin-top: 17px;
+    width: 94px;
+    height: 70px;
     z-index: 1;
   }
 }
 
 .placeholder {
-  width: 13em;
+  border: 1px dashed black;
+  width: 6.5em;
   margin: 0 auto;
-  height: 17em;
+  height: 8.5em;
+  padding-top: 4em;
   position: relative;
 
 
@@ -136,8 +163,6 @@ label {
 
   h2 {
     position: absolute;
-    top: 14px;
-    left: 75px;
   }
   img {
     margin-top: 33px;
@@ -150,17 +175,31 @@ label {
 
 .gameBoard {
   background-image: url(../images/comic_background.jpg);
+  height: 95vh;
 }
 .pVSc{
   color: white;
-  font-size: 30px;
-  // font-family: 'Stardos Stencil', cursive;
+  font-size: 15px;
   font-family: 'Bungee Shade', cursive;
-  display: block;
   background-color: darkblue;
   margin-bottom: 20px;
   padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+
+  p:first-child {
+    margin-right: 1em;
+  }
+
+  p:last-child {
+    margin-left: 1em;
+  }
 }
+
+
 
 .winPage{
   background-image: url(../images/comic_background.jpg);

@@ -15,22 +15,23 @@ class PlayerBoard extends React.Component {
 
     if (this.props.activeCard.name === 'standby') {
       return (
-        <div>
-          <div className="placeholder"></div>
-          {/* <Card card={this.props.activeCard}
-            owner={'player'}
-            handleClickFunction={this.props.handleClickFunction}/> */}
+        <>
+        <div className="player-board">
+          <div className="placeholder">Click a card to play</div>
           <PlayerHand>{cards}</PlayerHand>
         </div>
+        </>
       );
     } else {
       return (
-        <div>
+        <>
+        <div className="player-board">
           <Card card={this.props.activeCard}
             owner={'player'}
             handleClickFunction={this.props.handleClickFunction}/>
           <PlayerHand>{cards}</PlayerHand>
         </div>
+        </>
       );
     }
   }
