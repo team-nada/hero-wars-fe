@@ -13,35 +13,35 @@ class About extends React.Component {
     this.state = {
       members: [
         {
-          name: 'Roger(aka)',
+          name: 'Roger',
           race: 'Demon',
           image_url: Roger,
           power: 91,
           groupaffiliation: 'Legion of Doom',
         },
         {
-          name: 'Liz(aka)',
+          name: 'Liz',
           race: 'Mutant',
           image_url: Liz,
           power: 89,
           groupaffiliation: 'Justice League',
         },
         {
-          name: 'Paula(aka)',
+          name: 'Paula',
           race: 'Alien',
           image_url: Paula,
           power: 89,
           groupaffiliation: 'Inhumans',
         },
         {
-          name: 'Jhia(aka)',
+          name: 'Jhia',
           race: 'Human',
           image_url: Jhia,
           power: 90,
           groupaffiliation: 'A-Force/Avengers',
         },
         {
-          name: 'Anthony(aka Lighting B)',
+          name: 'Anthony',
           race: 'Mutant',
           image_url: Anthony,
           power: 95,
