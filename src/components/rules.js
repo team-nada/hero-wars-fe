@@ -7,7 +7,6 @@ class Rules extends React.Component {
     return (
       <>
       <div class="rule-container">
-        
         <div id="item1">
           <h1>Example Hero Card</h1>
           <Card />
