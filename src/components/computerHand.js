@@ -9,7 +9,7 @@ class ComputerHand extends React.Component {
 
   render(){
     return (
-      <ul className="hand">{this.props.children}</ul>
+      <ul className="computer-hand hand">{this.props.children}</ul>
     );
   }
 }
