@@ -1,3 +1,5 @@
+//https://www.w3schools.com/css/css3_buttons.asp
+
 @import url('https://fonts.googleapis.com/css?family=Oswald:700');
 @import url('https://fonts.googleapis.com/css?family=Stardos+Stencil');
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
@@ -169,30 +171,68 @@ label {
   padding: 10px;
 }
 
-.gameFooter{
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(105, 136, 204) 100%);
-  height: 100px;
+.winPage{
+  background-image: url(../images/comic_background.jpg);
   font-family: 'Oswald', sans-serif;
-  p{
-    font-size: 30px;
-    color: whitesmoke;
+  height: 700px;
+  position: relative;
+ 
+  .final_results1{
+    position: absolute;
+    top: 100px;
+    left: 250px;
+    font-size: 50px;
+    color: Black;
+  }
+  .final_results2{
+    position: absolute;
+    top: 250px;
+    left: 270px;
+    font-size: 50px;
+    color: Black;
   }
   
-    button {
+    .button {
       background-color: darkred; /* Green */
       border: none;
       color: white;
-      padding: 5px 32px;
+      padding: 15px 32px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;
+      font-family: 'Stardos Stencil', cursive;
+      font-size: 20px;
       margin: 10px 2px;
       -webkit-transition-duration: 0.4s; /* Safari */
       transition-duration: 0.4s;
       cursor: pointer;
     }
+    .button1{
+      background-color: white; 
+      color: black; 
+      border: 2px solid darkred;
+      position: absolute;
+      top: 350px;
+      left: 400px;
+
+    }
+    .button1:hover{
+      background-color: darkred;
+      color: white;
+    }
+    .button2{
+      background-color: white; 
+      color: black; 
+      border: 2px solid darkred;
+      position: absolute;
+      top: 350px;
+      left: 650px;
+    }
+    .button2:hover{
+      background-color: darkred;
+      color: white;
+    }
+
 
 
 }
