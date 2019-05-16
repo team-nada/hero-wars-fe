@@ -15,22 +15,21 @@ class ComputerBoard extends React.Component {
     // console.log(this.props.activeCard.name);
     if (this.props.activeCard.name === 'standby') {
       return (
-        <div>
+        <>
           <ComputerHand>{cards}</ComputerHand>
-          {/* <Card card={this.props.activeCard}
-            owner={'computer'}
-            handleClickFunction={this.props.handleClickFunction}/> */}
             <div className="placeholder"></div>
-        </div>
+        </>
       );
     } else {
       return (
-        <div>
+        <>
+        <div className="computer-board">
           <ComputerHand>{cards}</ComputerHand>
           <Card card={this.props.activeCard}
             owner={'computer'}
             handleClickFunction={this.props.handleClickFunction}/>
         </div>
+        </>
       );
     }
   }
