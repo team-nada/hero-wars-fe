@@ -32,7 +32,7 @@ class Game extends React.Component {
     return (
       <React.Fragment>
         <div className= "gameBoard">
-        <h2>{this.props.username} vs. Computer</h2>
+        <h2 className="pVSc">{this.props.username} vs. Computer</h2>
         <ComputerBoard hand={this.props.computerCards}
           activeCard={this.props.computerActiveCard}
           handleClickFunction={this.props.handleClickFunction}/>
