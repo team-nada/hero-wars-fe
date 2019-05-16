@@ -12,7 +12,7 @@ class ComputerBoard extends React.Component {
     if(this.props.hand){
       cards = this.props.hand.map((card, i) => <li key={i}> <Card card={card} handId={i} owner={'computer'} handleClickFunction={this.props.handleClickFunction}/></li>);
     }
-    console.log(this.props.activeCard.name);
+    // console.log(this.props.activeCard.name);
     if (this.props.activeCard.name === 'standby') {
       return (
         <div>

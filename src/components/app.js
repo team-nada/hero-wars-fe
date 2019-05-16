@@ -53,7 +53,6 @@ class App extends React.Component {
       }
     });
 
-
     this.setState({
       cards: {
         computerCards: tempComputerArray,
@@ -180,7 +179,7 @@ class App extends React.Component {
     e.preventDefault();
     this.getCards();
     this.setState({
-      username: this.username,
+      username: this.state.username,
       redirectToWinPage: false,
       playerActiveCard: {
         name: 'standby'
