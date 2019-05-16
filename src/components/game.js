@@ -11,6 +11,22 @@ class Game extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    let randomIndex = Math.floor(Math.random() * this.props.computerCards.length);
+    let cardToPlay = this.props.computerCards[randomIndex];
+    this.props.handleClickFunction(cardToPlay, 'computer', randomIndex);
+  }
+
+  // If the computer hasn't played yet, have it play a card
+  componentWillUpdate(prevProps){
+    if(prevProps.computerActiveCard && prevProps.computerActiveCard.name === 'standby'){
+      let randomIndex = Math.floor(Math.random() * prevProps.computerCards.length);
+      let cardToPlay = prevProps.computerCards[randomIndex];
+      prevProps.handleClickFunction(cardToPlay, 'computer', randomIndex);
+
+    }
+  }
+
   render(){
     // console.log('Cards in Games Component:',this.props);
     return (

@@ -64,8 +64,8 @@ class App extends React.Component {
   }
 
   //Get click from gameboard and handle game logic
-  handleCardClick = (cardData, cardComponent, owner, handId) => {
-    console.log('Clicked on card:', cardData, ' Owned by: ', owner, ' Full React Component: ', cardComponent);
+  handleCardClick = (cardData, owner, handId) => {
+    console.log('Clicked on card:', cardData, ' Owned by: ', owner);
 
     //Checks who owns the card, and whether or not that player has an active card
     //If no active card, update it to the clicked card
@@ -181,7 +181,14 @@ class App extends React.Component {
     this.getCards();
     this.setState({
       username: this.username,
-      redirectToWinPage: false});
+      redirectToWinPage: false,
+      playerActiveCard: {
+        name: 'standby'
+      },
+      computerActiveCard: {
+        name: 'standby'
+      }
+    });
   }
 
     handleMainMenu = (e) => {
@@ -189,7 +196,13 @@ class App extends React.Component {
     this.getCards();
     this.setState({
       username: null, 
-      redirectToWinPage: false});
+      redirectToWinPage: false,
+      playerActiveCard: {
+        name: 'standby'
+      },
+      computerActiveCard: {
+        name: 'standby'
+      }});
   }
 
 
