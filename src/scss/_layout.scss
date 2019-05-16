@@ -152,6 +152,7 @@ label {
   background-image: url(../images/card-back.png);
 
   h3 {
+    position: relative;
     z-index: -1;
   }
 }
@@ -267,8 +268,8 @@ label {
       border: 2px solid darkred;
       position: absolute;
       top: 350px;
-      left: 600px;
-      right: 250px;
+      left: 700px;
+      right: 300px;
     }
     .button-2:hover{
       background-color: darkred;
