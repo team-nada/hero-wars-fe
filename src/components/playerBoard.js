@@ -23,16 +23,16 @@ class PlayerBoard extends React.Component {
           <PlayerHand>{cards}</PlayerHand>
         </div>
       );
+    } else {
+      return (
+        <div>
+          <Card card={this.props.activeCard}
+            owner={'player'}
+            handleClickFunction={this.props.handleClickFunction}/>
+          <PlayerHand>{cards}</PlayerHand>
+        </div>
+      );
     }
-
-    return (
-      <div>
-        <Card card={this.props.activeCard}
-          owner={'player'}
-          handleClickFunction={this.props.handleClickFunction}/>
-        <PlayerHand>{cards}</PlayerHand>
-      </div>
-    );
   }
 }
 
