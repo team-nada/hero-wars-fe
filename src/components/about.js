@@ -6,11 +6,13 @@ import Paula from '../images/paula.jpg';
 import Anthony from '../images/Me.jpg';
 import Roger from '../images/roger.jpg';
 
+
 class About extends React.Component {
   constructor(props){
     super(props);
   
     this.state = {
+      
       members: [
         {
           name: 'Roger(aka)',
@@ -52,17 +54,25 @@ class About extends React.Component {
     }
   }
 
+  
+
   render(){
     return (
       <>
         <p> About Us</p>
         <div className="AboutUs">
-          <Card card = {this.state.members[0]}/>
-          <Card card = {this.state.members[1]}/>
-          <Card card = {this.state.members[2]}/>
-          <Card card = {this.state.members[3]}/>
-          <Card card = {this.state.members[4]}/>
+          <Card className='memberCard' card = {this.state.members[0]}/>
+          <Card className='memberCard' card = {this.state.members[1]}/>
+          <Card className='memberCard' card = {this.state.members[2]}/>
+          <Card className='memberCard' card = {this.state.members[3]}/>
+          <Card className='memberCard' card = {this.state.members[4]}/>
         </div>
+        {/* <div class="flip-card">
+          <div class="flip-card-inner">
+          <Card className = 'flip-card-front' card = {this.state.members[0]}/>
+          <Card class="flip-card-back"><img src= {CardBack}></img> </Card> 
+          </div>
+        </div> */}
       </>
     );
   }
