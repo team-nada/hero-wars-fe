@@ -26,6 +26,7 @@ class Game extends React.Component {
     //Makre sure the card exists and that hand has cards to play
     if(prevProps.computerActiveCard && prevProps.computerActiveCard.name === 'standby' && prevProps.computerCards.length > 0){
       console.log("WillUpdate", prevProps);
+      //Play a random card out of the hand array
       let randomIndex = Math.floor(Math.random() * prevProps.computerCards.length);
       let cardToPlay = prevProps.computerCards[randomIndex];
       prevProps.handleClickFunction(cardToPlay, 'computer', randomIndex);
