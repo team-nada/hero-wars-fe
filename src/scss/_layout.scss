@@ -96,16 +96,30 @@ label {
 .card{
   text-align: center;
   border: 1px solid black;
-  width: 9em;
+  width: 13em;
   margin: 0 auto;
-  height: 12em;
+  height: 17em;
+  background-image: url(../images/cardLay.png);
+  background-size: cover;
+  position: relative;
+
 
   h1{
-    margin-top: 1em;
+    margin-top: 0px;
   }
 
-  img{
-    margin: 1em;
-    width: 5em;
+  h2{
+    position: absolute;
+    top: 14px;
+    left: 75px;
   }
+  img{
+    margin-top: 33px;
+    width: 185px;
+    height: 140px;
+    z-index: 1;
+  }
+}
+.gameBoard{
+  background-image: url(../images/comic_background.jpg);
 }
