@@ -194,19 +194,20 @@ class App extends React.Component {
 
 
   render(){
+    if (this.state.redirectToWinPage){
+      return(
+        <Win playerScore={this.state.playerScore}
+        computerScore={this.state.computerScore}
+        handleMainMenu={this.handleMainMenu}
+        handlePlayAgain={this.handlePlayAgain} />
+      );
+    }
     if (this.state.username === null) {
       return (
         <>
           <Home handleSubmit={this.handleSubmit} username={this.state.username}/>
         </>
       );
-    } else if(this.state.redirectToWinPage){
-        return(
-          <Win playerScore={this.state.playerScore}
-          computerScore={this.state.computerScore}
-          handleMainMenu={this.handleMainMenu}
-          handlePlayAgain={this.handlePlayAgain} />
-        );
     } else {
       return (
         <>
