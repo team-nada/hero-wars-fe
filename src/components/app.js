@@ -27,8 +27,10 @@ class App extends React.Component {
         name: 'standby'
       },
       playerScore: 0,
-      computerScore: 0
+      computerScore: 0,
+      redirectToWinPage: false
     }
+    
   }
 
   // Makes call to server
@@ -138,10 +140,15 @@ class App extends React.Component {
   resetBoard = () => {
 
     if(this.state.cards.playerCards.length === 0){
-      //Switch to Win screen
-      //redirect to win: true, render
-      this.props.history.push('/win');
-
+      this.setState({
+        playerActiveCard: {
+          name: 'standby'
+        },
+        computerActiveCard: {
+          name: 'standby'
+        },
+        redirectToWinPage: true
+      })
     }else {
       this.setState({
         playerActiveCard: {
@@ -172,16 +179,29 @@ class App extends React.Component {
   handlePlayAgain = (e) => {
     e.preventDefault();
     this.getCards();
-    this.setState({username: this.username});
+    this.setState({
+      username: this.username,
+      redirectToWinPage: false});
   }
 
     handleMainMenu = (e) => {
     e.preventDefault();
-    this.setState({username: null});
+    this.getCards();
+    this.setState({
+      username: null, 
+      redirectToWinPage: false});
   }
 
 
   render(){
+    if (this.state.redirectToWinPage){
+      return(
+        <Win playerScore={this.state.playerScore}
+        computerScore={this.state.computerScore}
+        handleMainMenu={this.handleMainMenu}
+        handlePlayAgain={this.handlePlayAgain} />
+      );
+    }
     if (this.state.username === null) {
       return (
         <>

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:700');
+@import url('https://fonts.googleapis.com/css?family=Stardos+Stencil');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
 
 nav{
   background: rgb(2,0,36);
@@ -80,7 +82,7 @@ label {
 .splash {
 }
 
-.hand{
+.hand {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -93,33 +95,104 @@ label {
 
 }
 
-.card{
+.card {
   text-align: center;
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 13em;
   margin: 0 auto;
   height: 17em;
   background-image: url(../images/cardLay.png);
   background-size: cover;
   position: relative;
+  border-radius: 10px;
 
 
-  h1{
+  h1 {
     margin-top: 0px;
   }
 
-  h2{
+  h2 {
+    position: absolute;
+    top: 14px;
+    left: 45px;
+    color: white;
+  }
+  h3{
+    color: white;
+    font-size: 25px;
+  
+  }
+  img {
+    margin-top: 33px;
+    width: 188px;
+    height: 140px;
+    z-index: 1;
+  }
+}
+
+.placeholder {
+  width: 13em;
+  margin: 0 auto;
+  height: 17em;
+  position: relative;
+
+
+  h1 {
+    margin-top: 0px;
+  }
+
+  h2 {
     position: absolute;
     top: 14px;
     left: 75px;
   }
-  img{
+  img {
     margin-top: 33px;
     width: 185px;
     height: 140px;
     z-index: 1;
   }
 }
-.gameBoard{
+
+
+.gameBoard {
   background-image: url(../images/comic_background.jpg);
+}
+.pVSc{
+  color: white;
+  font-size: 30px;
+  // font-family: 'Stardos Stencil', cursive;
+  font-family: 'Bungee Shade', cursive;
+  display: block;
+  background-color: darkblue;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.gameFooter{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(105, 136, 204) 100%);
+  height: 100px;
+  font-family: 'Oswald', sans-serif;
+  p{
+    font-size: 30px;
+    color: whitesmoke;
+  }
+  
+    button {
+      background-color: darkred; /* Green */
+      border: none;
+      color: white;
+      padding: 5px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 2px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+
 }
