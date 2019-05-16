@@ -186,7 +186,9 @@ class App extends React.Component {
       },
       computerActiveCard: {
         name: 'standby'
-      }
+      },
+      playerScore: 0,
+      computerScore: 0
     });
   }
 
@@ -201,7 +203,10 @@ class App extends React.Component {
       },
       computerActiveCard: {
         name: 'standby'
-      }});
+      },
+      playerScore: 0,
+      computerScore: 0
+    });
   }
 
 
