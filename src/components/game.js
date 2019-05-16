@@ -11,15 +11,21 @@ class Game extends React.Component {
     super(props);
   }
 
+  //The AI plays a random card on game start
   componentDidMount(){
-    let randomIndex = Math.floor(Math.random() * this.props.computerCards.length);
-    let cardToPlay = this.props.computerCards[randomIndex];
-    this.props.handleClickFunction(cardToPlay, 'computer', randomIndex);
+    //make sure card exists and hand has cards
+    if(this.props.computerActiveCard.name && this.props.computerCards.length > 0){
+      let randomIndex = Math.floor(Math.random() * this.props.computerCards.length);
+      let cardToPlay = this.props.computerCards[randomIndex];
+      this.props.handleClickFunction(cardToPlay, 'computer', randomIndex);
+    }
   }
 
   // If the computer hasn't played yet, have it play a card
   componentWillUpdate(prevProps){
-    if(prevProps.computerActiveCard && prevProps.computerActiveCard.name === 'standby'){
+    //Makre sure the card exists and that hand has cards to play
+    if(prevProps.computerActiveCard && prevProps.computerActiveCard.name === 'standby' && prevProps.computerCards.length > 0){
+      console.log("WillUpdate", prevProps);
       let randomIndex = Math.floor(Math.random() * prevProps.computerCards.length);
       let cardToPlay = prevProps.computerCards[randomIndex];
       prevProps.handleClickFunction(cardToPlay, 'computer', randomIndex);
@@ -28,7 +34,7 @@ class Game extends React.Component {
   }
 
   render(){
-    // console.log('Cards in Games Component:',this.props);
+    console.log('Cards in Games Component:',this.props);
     return (
       <React.Fragment>
         <div className= "gameBoard">
