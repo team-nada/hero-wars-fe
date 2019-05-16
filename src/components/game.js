@@ -26,13 +26,7 @@ class Game extends React.Component {
         <PlayerBoard hand={this.props.playerCards}
           activeCard={this.props.playerActiveCard}
           handleClickFunction={this.props.handleClickFunction}/>
-        
-
-        {/*Need to add logic to display the Win page*/}
-        {/* <Win playersScore={this.props.playersScore}
-          computerScore={this.props.computerScore}
-          handleMainMenu={this.props.handleMainMenu}
-          handlePlayAgain={this.props.handlePlayAgain}/> */}
+        </div>
       </React.Fragment>
     );
   }
