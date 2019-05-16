@@ -148,6 +148,14 @@ label {
   }
 }
 
+.computer-hand .card {
+  background-image: url(../images/card-back.png);
+
+  h3 {
+    z-index: -1;
+  }
+}
+
 .placeholder {
   border: 1px dashed black;
   width: 6.5em;
