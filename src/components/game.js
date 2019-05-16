@@ -28,10 +28,10 @@ class Game extends React.Component {
         
 
         {/*Need to add logic to display the Win page*/}
-        <Win playersScore={this.props.playersScore}
-          comuterScore={this.props.computerScore}
+        {/* <Win playersScore={this.props.playersScore}
+          computerScore={this.props.computerScore}
           handleMainMenu={this.props.handleMainMenu}
-          handlePlayAgain={this.props.handlePlayAgain}/>
+          handlePlayAgain={this.props.handlePlayAgain}/> */}
       </React.Fragment>
     );
   }

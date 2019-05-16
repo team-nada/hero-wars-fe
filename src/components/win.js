@@ -3,9 +3,9 @@ import Home from './home';
 import Game from './game';
 
 class Win extends React.Component {
-  // constructor(props){
-  //   super(props);
-  // }
+  constructor(props){
+    super(props);
+  }
 
   render(){
     return (

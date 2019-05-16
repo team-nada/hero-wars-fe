@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Home from './home.js';
 import Game from './game.js';
 import Win from './win.js';
@@ -68,10 +68,7 @@ class App extends React.Component {
     //Checks who owns the card, and whether or not that player has an active card
     //If no active card, update it to the clicked card
     if (owner === 'player' && this.state.playerActiveCard.name === 'standby' ){
-      //TODO: pop card off player array based on name 
-      console.log(`Clicked on id: ${handId}`);
-      console.log(`Card at that index:  `, this.state.cards.playerCards[handId]);
-
+      //Removes clicked card from player hand 
       this.state.cards.playerCards.splice(handId, 1);
 
       this.setState({
@@ -82,9 +79,7 @@ class App extends React.Component {
         }
       }, this.executeGame);
     }else if (owner === 'computer' && this.state.computerActiveCard.name === 'standby'){
-      //TODO: pop card off player array based on name
-      console.log(`Clicked on id: ${handId}`);
-
+      //Removes clicked card from player hand 
       this.state.cards.computerCards.splice(handId, 1);
 
       this.setState({
@@ -116,7 +111,7 @@ class App extends React.Component {
 
         this.setState({
           playerScore: newScore
-        }, this.resetActiveCard)
+        }, this.resetBoard)
 
       }else if (conflictResult < 0){
         console.log('Computer won');
@@ -124,7 +119,7 @@ class App extends React.Component {
 
         this.setState({
           computerScore: newScore
-        }, this.resetActiveCard)
+        }, this.resetBoard)
 
       }else if (conflictResult === 0){
         console.log('Tie!');
@@ -132,23 +127,32 @@ class App extends React.Component {
         this.setState({
           computerScore: this.state.computerScore + 1,
           playerScore: this.state.playerScore + 1
-        }, this.resetActiveCard)
+        }, this.resetBoard)
 
       }
 
     }
   }
 
-  resetActiveCard = () => {
-    console.log(`Current score: Player: ${this.state.playerScore}, Computer: ${this.state.computerScore}`);
-    this.setState({
-      playerActiveCard: {
-        name: 'standby'
-      },
-      computerActiveCard: {
-        name: 'standby'
-      }
-    })
+  //Resets active cards if game is still underway, triggers win screen if hands are empty
+  resetBoard = () => {
+
+    if(this.state.cards.playerCards.length === 0){
+      //Switch to Win screen
+      //redirect to win: true, render
+      this.props.history.push('/win');
+
+    }else {
+      this.setState({
+        playerActiveCard: {
+          name: 'standby'
+        },
+        computerActiveCard: {
+          name: 'standby'
+        }
+      })
+    }
+    
   }
 
   componentDidMount(){
