@@ -33,6 +33,7 @@ class Game extends React.Component {
           computerScore={this.props.computerScore}
           handleMainMenu={this.props.handleMainMenu}
           handlePlayAgain={this.props.handlePlayAgain}/> */}
+        </div>
       </React.Fragment>
     );
   }
