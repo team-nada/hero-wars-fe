@@ -11,8 +11,30 @@ class Game extends React.Component {
     super(props);
   }
 
+  //The AI plays a random card on game start
+  componentDidMount(){
+    //make sure card exists and hand has cards
+    if(this.props.computerActiveCard.name && this.props.computerCards.length > 0){
+      let randomIndex = Math.floor(Math.random() * this.props.computerCards.length);
+      let cardToPlay = this.props.computerCards[randomIndex];
+      this.props.handleClickFunction(cardToPlay, 'computer', randomIndex);
+    }
+  }
+
+  // If the computer hasn't played yet, have it play a card
+  componentWillUpdate(prevProps){
+    //Makre sure the card exists and that hand has cards to play
+    if(prevProps.computerActiveCard && prevProps.computerActiveCard.name === 'standby' && prevProps.computerCards.length > 0){
+      console.log("WillUpdate", prevProps);
+      let randomIndex = Math.floor(Math.random() * prevProps.computerCards.length);
+      let cardToPlay = prevProps.computerCards[randomIndex];
+      prevProps.handleClickFunction(cardToPlay, 'computer', randomIndex);
+
+    }
+  }
+
   render(){
-    // console.log('Cards in Games Component:',this.props);
+    console.log('Cards in Games Component:',this.props);
     return (
       <React.Fragment>
         <div className= "gameBoard">
@@ -26,13 +48,6 @@ class Game extends React.Component {
         <PlayerBoard hand={this.props.playerCards}
           activeCard={this.props.playerActiveCard}
           handleClickFunction={this.props.handleClickFunction}/>
-        
-
-        {/*Need to add logic to display the Win page*/}
-        {/* <Win playersScore={this.props.playersScore}
-          computerScore={this.props.computerScore}
-          handleMainMenu={this.props.handleMainMenu}
-          handlePlayAgain={this.props.handlePlayAgain}/> */}
         </div>
       </React.Fragment>
     );
