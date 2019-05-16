@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:700');
 @import url('https://fonts.googleapis.com/css?family=Stardos+Stencil');
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
-
+@import url('https://fonts.googleapis.com/css?family=Wallpoet');
 
 nav{
   background: rgb(2,0,36);
@@ -38,17 +38,17 @@ nav{
   border-radius: 5px;
   transition: all 0.5s ease;
   background-color: rgba(255, 255, 255,0.9);
-
-
 }
 
 .intro-title {
-  margin-top: 200px;
-  font-size: 80px;
+  // margin-top: 200px;
+  font-size: 120px;
+  font-family: 'Wallpoet', cursive;
 }
 
 label {
   margin: 15px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .user-input {
@@ -77,9 +77,13 @@ label {
   color: white;
 }
 
-
-.container {
+.home-container {
   height: 100vh;
+  background-image: url(../images/comic_background.jpg);
+}
+
+.splash{
+  padding-top: 120px;
 }
 
 .hand {
@@ -113,6 +117,7 @@ label {
   h3{
     color: white;
     font-size: 25px;
+    padding-top: 35px;
   
   }
   img {
