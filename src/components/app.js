@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Home from './home.js';
 import Game from './game.js';
 import Win from './win.js';
@@ -27,8 +27,10 @@ class App extends React.Component {
         name: 'standby'
       },
       playerScore: 0,
-      computerScore: 0
+      computerScore: 0,
+      redirectToWinPage: false
     }
+    
   }
 
   // Makes call to server
@@ -62,23 +64,32 @@ class App extends React.Component {
   }
 
   //Get click from gameboard and handle game logic
-  handleCardClick = (cardData, cardComponent, owner) => {
+  handleCardClick = (cardData, cardComponent, owner, handId) => {
     console.log('Clicked on card:', cardData, ' Owned by: ', owner, ' Full React Component: ', cardComponent);
 
     //Checks who owns the card, and whether or not that player has an active card
     //If no active card, update it to the clicked card
     if (owner === 'player' && this.state.playerActiveCard.name === 'standby' ){
-      //TODO: pop card off player array based on name 
-      // use indexOf b/c it only does first item found? (Don't want to delete both if duplicate exists in hand)
+      //Removes clicked card from player hand 
+      this.state.cards.playerCards.splice(handId, 1);
 
       this.setState({
-        playerActiveCard: cardData
+        playerActiveCard: cardData,
+        cards: {
+          playerCards: this.state.cards.playerCards,
+          computerCards: this.state.cards.computerCards
+        }
       }, this.executeGame);
     }else if (owner === 'computer' && this.state.computerActiveCard.name === 'standby'){
-      //TODO: pop card off player array based on name
+      //Removes clicked card from player hand 
+      this.state.cards.computerCards.splice(handId, 1);
 
       this.setState({
-        computerActiveCard: cardData
+        computerActiveCard: cardData,
+        cards: {
+          playerCards: this.state.cards.playerCards,
+          computerCards: this.state.cards.computerCards
+        }
       }, this.executeGame);
 
     }else {
@@ -102,7 +113,7 @@ class App extends React.Component {
 
         this.setState({
           playerScore: newScore
-        }, this.resetActiveCard)
+        }, this.resetBoard)
 
       }else if (conflictResult < 0){
         console.log('Computer won');
@@ -110,7 +121,7 @@ class App extends React.Component {
 
         this.setState({
           computerScore: newScore
-        }, this.resetActiveCard)
+        }, this.resetBoard)
 
       }else if (conflictResult === 0){
         console.log('Tie!');
@@ -118,23 +129,37 @@ class App extends React.Component {
         this.setState({
           computerScore: this.state.computerScore + 1,
           playerScore: this.state.playerScore + 1
-        }, this.resetActiveCard)
+        }, this.resetBoard)
 
       }
 
     }
   }
 
-  resetActiveCard = () => {
-    console.log(`Current score: Player: ${this.state.playerScore}, Computer: ${this.state.computerScore}`);
-    this.setState({
-      playerActiveCard: {
-        name: 'standby'
-      },
-      computerActiveCard: {
-        name: 'standby'
-      }
-    })
+  //Resets active cards if game is still underway, triggers win screen if hands are empty
+  resetBoard = () => {
+
+    if(this.state.cards.playerCards.length === 0){
+      this.setState({
+        playerActiveCard: {
+          name: 'standby'
+        },
+        computerActiveCard: {
+          name: 'standby'
+        },
+        redirectToWinPage: true
+      })
+    }else {
+      this.setState({
+        playerActiveCard: {
+          name: 'standby'
+        },
+        computerActiveCard: {
+          name: 'standby'
+        }
+      })
+    }
+    
   }
 
   componentDidMount(){
@@ -154,12 +179,17 @@ class App extends React.Component {
   handlePlayAgain = (e) => {
     e.preventDefault();
     this.getCards();
-    this.setState({username: this.username});
+    this.setState({
+      username: this.username,
+      redirectToWinPage: false});
   }
 
     handleMainMenu = (e) => {
     e.preventDefault();
-    this.setState({username: null});
+    this.getCards();
+    this.setState({
+      username: null, 
+      redirectToWinPage: false});
   }
 
 
@@ -170,6 +200,13 @@ class App extends React.Component {
           <Home handleSubmit={this.handleSubmit} username={this.state.username}/>
         </>
       );
+    } else if(this.state.redirectToWinPage){
+        return(
+          <Win playerScore={this.state.playerScore}
+          computerScore={this.state.computerScore}
+          handleMainMenu={this.handleMainMenu}
+          handlePlayAgain={this.handlePlayAgain} />
+        );
     } else {
       return (
         <>

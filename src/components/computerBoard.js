@@ -10,17 +10,29 @@ class ComputerBoard extends React.Component {
   render(){
     let cards = [];
     if(this.props.hand){
-      cards = this.props.hand.map((card, i) => <li key={i}> <Card card={card} owner={'computer'} handleClickFunction={this.props.handleClickFunction}/></li>);
+      cards = this.props.hand.map((card, i) => <li key={i}> <Card card={card} handId={i} owner={'computer'} handleClickFunction={this.props.handleClickFunction}/></li>);
     }
-
-    return (
-      <div>
-        <ComputerHand>{cards}</ComputerHand>
-        <Card card={this.props.activeCard}
-          owner={'computer'}
-          handleClickFunction={this.props.handleClickFunction}/>
-      </div>
-    );
+    console.log(this.props.activeCard.name);
+    if (this.props.activeCard.name === 'standby') {
+      return (
+        <div>
+          <ComputerHand>{cards}</ComputerHand>
+          {/* <Card card={this.props.activeCard}
+            owner={'computer'}
+            handleClickFunction={this.props.handleClickFunction}/> */}
+            <div className="placeholder"></div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <ComputerHand>{cards}</ComputerHand>
+          <Card card={this.props.activeCard}
+            owner={'computer'}
+            handleClickFunction={this.props.handleClickFunction}/>
+        </div>
+      );
+    }
   }
 }
 
