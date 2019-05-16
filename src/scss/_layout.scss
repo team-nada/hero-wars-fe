@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:700');
 
+
 nav{
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(105, 136, 204) 100%);
@@ -77,20 +78,10 @@ label {
   height: 100vh;
 }
 
-.splash {
-}
-
 .hand{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
-.rules {
-  border-radius: 5px;
-  margin: 0em 15em;
-  text-align: left;
-  font-size: 16px;
-
 }
 
 .card{
