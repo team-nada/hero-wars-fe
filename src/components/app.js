@@ -33,6 +33,13 @@ class App extends React.Component {
     
   }
 
+  // componentDidUpdate(){
+  //   if(this.state.computerActiveCard.name === 'standby' && this.state.playerActiveCard.name === 'standby'){
+      
+  //   }
+    
+  // }
+
   // Makes call to server
   getCards = async () => {
     console.log('get cards');
@@ -78,7 +85,7 @@ class App extends React.Component {
           playerCards: this.state.cards.playerCards,
           computerCards: this.state.cards.computerCards
         }
-      }, this.executeGame);
+      }, () => setTimeout(this.executeGame, 1000));
     }else if (owner === 'computer' && this.state.computerActiveCard.name === 'standby'){
       //Removes clicked card from player hand 
       this.state.cards.computerCards.splice(handId, 1);
@@ -89,7 +96,7 @@ class App extends React.Component {
           playerCards: this.state.cards.playerCards,
           computerCards: this.state.cards.computerCards
         }
-      }, this.executeGame);
+      }, () => setTimeout(this.executeGame, 1000));
 
     }else {
       console.log('Unknown Owner, or active slot is already taken');
@@ -97,7 +104,7 @@ class App extends React.Component {
 
   }
 
-  executeGame(){
+  executeGame = () => {
     console.log('Current active cards: Player: ', this.state.playerActiveCard, ' Computer: ', this.state.computerActiveCard);
 
     //If both active cards are ready, execute game logic
@@ -128,7 +135,7 @@ class App extends React.Component {
         this.setState({
           computerScore: this.state.computerScore + 1,
           playerScore: this.state.playerScore + 1
-        }, this.resetBoard)
+        }, this.resetBoard, 1000)
 
       }
 
