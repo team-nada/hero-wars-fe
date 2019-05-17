@@ -51,3 +51,23 @@ ol li{
   font-size: 18px;
   padding-bottom: 10px;
 }
+.active-card .card{
+  display: none;
+}
+
+.active-back {
+  background-image: url(../images/card-back.png);
+
+  h3 {
+    position: relative;
+    z-index: -1;
+  }
+  img{
+    position: relative;
+    z-index: -1;
+  }
+  h2{
+    position: relative;
+    z-index: -1;
+  }
+}
