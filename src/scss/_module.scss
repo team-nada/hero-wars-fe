@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Abel');
 
-// Rules Componenent CSS
+/***********************
+  Rules Componenent CSS 
+*************************/
 .rule-container{
   display: grid;
   grid: 100px / auto auto;
   grid-gap: 10px;
-  // background-color: #2196F3;
-  background-image: url(../images/comic_background.jpg);
-
   padding: 20px;
-  height: 86vh;
-
 }
 
 .rule-container > div {
@@ -19,6 +16,17 @@
   text-align: center;
   padding: 40px 0;
   height: 515px;
+
+  .card{
+    width: 9.5em;
+    height: 12.5em;
+  }
+
+  .card img{
+    margin-top: 24px;
+    width: 138px;
+    height: 103px;
+  }
 }
 
 .rules-notes {
@@ -36,7 +44,7 @@
 }
 
 #item2{
-  padding: 7em;
+  padding: 3em;
 
   h1{
     font-size: 45px;
@@ -56,14 +64,16 @@ ol li{
   font-size: 18px;
   padding-bottom: 10px;
 }
+
 .active-card .card{
   display: none;
 }
 
 .active-back {
-  background-image: url(../images/card-back.png);
+  background-image: $card-back;
 
   h3 {
+    font-family: 'Wallpoet', cursive;
     position: relative;
     z-index: -1;
   }
@@ -76,3 +86,43 @@ ol li{
     z-index: -1;
   }
 }
+
+/***********************
+  About Us CSS 
+*************************/
+
+.about-container{
+  p{
+  color: white;
+  font-size: 35px;
+  font-family: 'Bungee Shade', cursive;
+  background-color: $sub-header-background-color;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+}
+.about{
+  display: inline-flex;
+  padding-top: 5em;
+
+  .card {
+    width: 9.5em;
+    height: 12.5em;
+    margin: 0px 20px;
+  }
+
+  .card h2{
+    top: 7px;
+    left: 12px;
+    font-size: 16px;
+  }
+  .card img{
+    margin-top: 24px;
+    width: 138px;
+    height: 103px;
+  }
+}
+
