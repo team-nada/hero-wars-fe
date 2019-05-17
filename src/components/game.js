@@ -42,7 +42,8 @@ class Game extends React.Component {
         <div className="pVSc"><Score score={this.props.playerScore}/> {this.props.username} vs. Jarvis <Score score={this.props.computerScore}/></div>
         <ComputerBoard hand={this.props.computerCards}
           activeCard={this.props.computerActiveCard}
-          handleClickFunction={this.props.handleClickFunction}/>
+          handleClickFunction={this.props.handleClickFunction}
+          status={this.props.computerCardStatus}/>
 
         <PlayerBoard hand={this.props.playerCards}
           activeCard={this.props.playerActiveCard}

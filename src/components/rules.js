@@ -14,17 +14,20 @@ class Rules extends React.Component {
         <div id="item2">
           <h1>Rules of Hero Wars</h1>
           <ol class="rules">
-            <li>When entering the battlefield you and your computer opponent will both be dealt 5 random Heroes.</li>
-            <li>Hero will have a set power attribute ranging from 1-100.</li>
-            <li>Heroes may be duplicated.</li>
-            <li>The player will select a hero to play as will the computer.</li>
-            <li>Select a Hero to play by clicking on the Hero Card.</li>
-            <li>The Hero card selected will then be set to Active on the battlefield.</li>
-            <li>The computer's Hero will have already been selected prior to player selection.</li>
-            <li>The player and computer hero power attributes will be compared, the highest value will win a point.</li>
-            <li>A tie will result in both players getting a a point.</li>
-            <li>The player with the most points at the end of the game will be the winner.  A tie is possible.</li>
-          </ol>    
+            <li>When entering the battlefield, each player will be dealt 5 random Heroes with a power attribute ranging from 1-100.</li>
+            <li>Each player will choose a hero and play it to the field.</li>
+            <li>Once both Heroes are selected, they will face off!</li>
+            <li>The Hero with the highest power will win and gain a point for their team.</li>
+            <li>Once combat is finished, both Heroes will be removed from the field and players can select their next card.</li>
+            <li>The player with the most points when all cards have been played will be the winner.</li>
+          </ol> 
+          <ul class="rules-notes">
+            <h2>Extra things to note:</h2>
+            <li>You can play a Hero by clicking on the card in your hand.</li>
+            <li>A tie between heroes will result in both players getting a a point.</li>
+            <li>It is possible to tie final score.</li>
+            <li>Once you use a Hero, you can't play them again. Choose the timing of your powerful cards wisely!</li>
+          </ul>   
         </div>
       </div>  
       </>

@@ -10,7 +10,7 @@ class ComputerBoard extends React.Component {
   render(){
     let cards = [];
     if(this.props.hand){
-      cards = this.props.hand.map((card, i) => <li key={i}> <Card card={card} handId={i} owner={'computer'} handleClickFunction={this.props.handleClickFunction}/></li>);
+      cards = this.props.hand.map((card, i) => <li key={i}> <Card className="computer-hand" card={card} handId={i} owner={'computer'} handleClickFunction={this.props.handleClickFunction}/></li>);
     }
     // console.log(this.props.activeCard.name);
     if (this.props.activeCard.name === 'standby') {
@@ -25,7 +25,8 @@ class ComputerBoard extends React.Component {
         <>
         <div className="computer-board">
           <ComputerHand>{cards}</ComputerHand>
-          <Card card={this.props.activeCard}
+
+          <Card className="active-card" status={this.props.status} card={this.props.activeCard}
             owner={'computer'}
             handleClickFunction={this.props.handleClickFunction}/>
         </div>

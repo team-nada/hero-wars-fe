@@ -21,6 +21,11 @@
   height: 515px;
 }
 
+.rules-notes {
+  padding-top: 5px;
+  line-height: 1.5em;
+}
+
 #item1{
   padding: 7em;
 
@@ -50,4 +55,24 @@ ol{
 ol li{
   font-size: 18px;
   padding-bottom: 10px;
+}
+.active-card .card{
+  display: none;
+}
+
+.active-back {
+  background-image: url(../images/card-back.png);
+
+  h3 {
+    position: relative;
+    z-index: -1;
+  }
+  img{
+    position: relative;
+    z-index: -1;
+  }
+  h2{
+    position: relative;
+    z-index: -1;
+  }
 }
