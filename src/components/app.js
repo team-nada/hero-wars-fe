@@ -28,7 +28,8 @@ class App extends React.Component {
       },
       playerScore: 0,
       computerScore: 0,
-      redirectToWinPage: false
+      redirectToWinPage: false,
+      computerCardStatus:'showBack'
     }
     
   }
@@ -85,7 +86,7 @@ class App extends React.Component {
           playerCards: this.state.cards.playerCards,
           computerCards: this.state.cards.computerCards
         }
-      }, () => setTimeout(this.executeGame, 1000));
+      }, this.flipComputerCard);
     }else if (owner === 'computer' && this.state.computerActiveCard.name === 'standby'){
       //Removes clicked card from player hand 
       this.state.cards.computerCards.splice(handId, 1);
@@ -96,12 +97,22 @@ class App extends React.Component {
           playerCards: this.state.cards.playerCards,
           computerCards: this.state.cards.computerCards
         }
-      }, () => setTimeout(this.executeGame, 1000));
+      });
 
     }else {
       console.log('Unknown Owner, or active slot is already taken');
     }
 
+  }
+
+  flipComputerCard = () => {
+    setTimeout(this.executeGame, 2000);
+    this.setState({
+      computerCardStatus: 'showHero'
+    })
+    
+
+    
   }
 
   executeGame = () => {
@@ -138,7 +149,9 @@ class App extends React.Component {
         }, this.resetBoard, 1000)
 
       }
-
+      this.setState({
+        computerCardStatus: 'showBack'
+      })
     }
   }
 
@@ -244,7 +257,8 @@ class App extends React.Component {
           handlePlayAgain={this.handlePlayAgain}
           handleMainMenu={this.handleMainMenu}
           playerScore={this.state.playerScore}
-          computerScore={this.state.computerScore}/>
+          computerScore={this.state.computerScore}
+          computerCardStatus={this.state.computerCardStatus}/>
         </>
       );
     }
