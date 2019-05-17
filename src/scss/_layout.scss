@@ -1,20 +1,58 @@
+body{
+  background-image: url(../images/comic_background.jpg);
+  background-size: cover;
+}
+
+/***********************
+  Nav Componenent CSS 
+*************************/
+nav{
+  background: $nav-background-color;
+  height: 25px;
+  font-family: 'Oswald', sans-serif;
+  z-index: 1;
+  position: relative;
+}
+
 .nav-menu {
-  margin: 30px;
+  padding-top: 5px;
 }
 
 .nav-menu li {
   display: inline;
   margin: 15px;
   padding: 15px;
+  font-size: 15px;
 }
 
+.nav-menu li:hover{
+  width: 50px;
+}
+
+.nav-menu a{
+  color: white;
+  text-decoration: none;
+}
+
+.nav-menu a:hover{
+  padding: .5em;
+  color: rgb(78, 77, 77);
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  background-color: $nav-hover-background-color;
+}
+
+/***********************
+  Home Componenent CSS 
+*************************/
 .intro-title {
-  margin-top: 200px;
-  font-size: 80px;
+  font-size: 120px;
+  font-family: 'Wallpoet', cursive;
 }
 
 label {
   margin: 15px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .user-input {
@@ -43,40 +81,198 @@ label {
   color: white;
 }
 
-
-.container {
-  height: 100vh;
+.splash{
+  padding-top: 120px;
 }
 
-.splash {
-}
-
-.hand{
+.hand {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-}
-.rules {
-  border-radius: 5px;
-  margin: 0em 15em;
-  text-align: left;
-  font-size: 16px;
-
+  justify-content: center;
 }
 
-.card{
+.computer-board {
+  position: absolute;
+  top: -35px;
+  z-index: 0;
+  left: 192.5px;
+  right: 192.5px;
+}
+
+.player-board {
+  position: relative;
+  top: 223px;
+}
+
+.player-hand {
+  padding-bottom: 40px;
+}
+
+.card {
   text-align: center;
-  border: 1px solid black;
-  width: 9em;
+  width: 6.5em;
   margin: 0 auto;
-  height: 12em;
+  height: 8.5em;
+  background-image: $card-lay;
+  background-size: cover;
+  position: relative;
+  border-radius: 10px;
 
-  h1{
-    margin-top: 1em;
+  h1 {
+    margin-top: 0px;
   }
 
-  img{
-    margin: 1em;
-    width: 5em;
+  h2 {
+    position: absolute;
+    top: 6px;
+    left: 10.5px;
+    font-size: 10px;
+    color: white;
+    font-family: 'Duru Sans', sans-serif;
+
   }
+  h3{
+    font-family: 'Duru Sans', sans-serif;
+    color: white;
+    font-size: 14px;
+    padding-top: 17px;
+  
+  }
+  img {
+    margin-top: 16px;
+    width: 95px;
+    height: 71px;
+    z-index: 1;
+    object-fit:cover;
+    object-position:50% 50%;
+  }
+}
+
+.computer-hand .card {
+  background-image: $card-back;
+
+  h3 {
+    position: relative;
+    z-index: -1;
+  }
+}
+
+.placeholder {
+  border: 1px dashed black;
+  background-color: rgba(143, 96, 96, 0.4);
+  width: 6.5em;
+  margin: 0 auto;
+  height: 8.5em;
+  padding: 2.5em 1em;
+  position: relative;
+  font-family: 'Duru Sans', sans-serif;
+
+
+  h1 {
+    margin-top: 0px;
+  }
+
+  h2 {
+    position: absolute;
+  }
+  img {
+    margin-top: 33px;
+    width: 185px;
+    height: 140px;
+    z-index: 1;
+  }
+}
+
+.pVSc{
+  color: white;
+  font-size: 20px;
+  font-family: 'Bungee Shade', cursive;
+  background-color: $sub-header-background-color;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+
+  p:first-child {
+    margin-right: 1em;
+  }
+
+  p:last-child {
+    margin-left: 1em;
+  }
+}
+
+.win-page{
+  font-family: 'Oswald', sans-serif;
+  height: 98vh;
+  position: relative;
+ 
+  .final-results-1{
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    right: 200px;
+    font-size: 50px;
+    color: Black;
+  }
+  .final-results-2{
+    position: absolute;
+    top: 250px;
+    left: 395px;
+    font-size: 50px;
+    color: Black;
+  }
+    //https://www.w3schools.com/css/css3_buttons.asp
+    .button {
+      background-color: darkred; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-family: 'Stardos Stencil', cursive;
+      font-size: 20px;
+      margin: 10px 2px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    .button-1 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid darkred;
+      position: absolute;
+      top: 350px;
+      // left: 500px;
+      left: 670px;
+
+    }
+    .button-1:hover{
+      background-color: darkred;
+      color: white;
+    }
+    .button-2{
+      background-color: white; 
+      color: black; 
+      border: 2px solid darkred;
+      position: absolute;
+      top: 350px;
+      // left: 700px;
+      right: 670px;
+    }
+    .button-2:hover{
+      background-color: darkred;
+      color: white;
+    }
+
+    .wins {
+      padding-top: 20px;
+      color: rgb(238, 231, 125);
+      font-size: 60px;
+      text-shadow: 2px 2px darkred;
+    }
 }

@@ -1,0 +1,125 @@
+/***********************
+  Rules Componenent CSS 
+*************************/
+.rule-container{
+  display: grid;
+  grid: 100px / auto auto;
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+.rule-container > div {
+  font-family: 'Abel', sans-serif;
+  background-color: $rule-column-background-color;
+  text-align: center;
+  padding: 40px 0;
+  height: 515px;
+
+  .card{
+    width: 9.5em;
+    height: 12.5em;
+  }
+
+  .card img{
+    margin-top: 24px;
+    width: 138px;
+    height: 103px;
+  }
+}
+
+.rules-notes {
+  padding-top: 5px;
+  line-height: 1.5em;
+}
+
+#item1{
+  padding: 7em;
+
+  h1{
+    padding-bottom: 1em;
+    font-size: 35px;
+  }
+}
+
+#item2{
+  padding: 3em;
+
+  h1{
+    font-size: 45px;
+    padding-bottom: 20px;
+  }
+}
+
+.rules{
+  text-align: left;
+}
+
+ol{
+  list-style-type: decimal;
+}
+
+ol li{
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.active-card .card{
+  display: none;
+}
+
+.active-back {
+  background-image: $card-back;
+
+  h3 {
+    font-family: 'Wallpoet', cursive;
+    position: relative;
+    z-index: -1;
+  }
+  img{
+    position: relative;
+    z-index: -1;
+  }
+  h2{
+    position: relative;
+    z-index: -1;
+  }
+}
+
+/***********************
+  About Us CSS 
+*************************/
+.about-container{
+  p{
+  color: white;
+  font-size: 35px;
+  font-family: 'Bungee Shade', cursive;
+  background-color: $sub-header-background-color;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+}
+.about{
+  display: inline-flex;
+  padding-top: 5em;
+
+  .card {
+    width: $about-card-width;
+    height: $about-card-height;
+    margin: 0px 20px;
+  }
+
+  .card h2{
+    top: 7px;
+    left: 12px;
+    font-size: 16px;
+  }
+  .card img{
+    margin-top: $about-card-margin-top;
+    width: $about-card-width-img;
+    height: $about-card-height-img;
+  }
+}
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './card.js';
 import Liz from '../images/liz.jpg';
-import Jhia from '../images/liz.jpg';
+import Jhia from '../images/jhia.jpg';
 import Paula from '../images/paula.jpg';
 import Anthony from '../images/Me.jpg';
 import Roger from '../images/roger.jpg';
@@ -13,35 +13,35 @@ class About extends React.Component {
     this.state = {
       members: [
         {
-          name: 'Roger(aka)',
+          name: 'Roger',
           race: 'Demon',
           image_url: Roger,
           power: 91,
           groupaffiliation: 'Legion of Doom',
         },
         {
-          name: 'Liz(aka)',
+          name: 'Liz',
           race: 'Mutant',
           image_url: Liz,
-          power: 89,
+          power: 92,
           groupaffiliation: 'Justice League',
         },
         {
-          name: 'Paula(aka)',
+          name: 'Paula',
           race: 'Alien',
           image_url: Paula,
           power: 89,
           groupaffiliation: 'Inhumans',
         },
         {
-          name: 'Jhia(aka)',
+          name: 'Jhia',
           race: 'Human',
           image_url: Jhia,
           power: 90,
           groupaffiliation: 'A-Force/Avengers',
         },
         {
-          name: 'Anthony(aka Lighting B)',
+          name: 'Anthony',
           race: 'Mutant',
           image_url: Anthony,
           power: 95,
@@ -55,13 +55,15 @@ class About extends React.Component {
   render(){
     return (
       <>
-        <p> About Us</p>
-        <div className="AboutUs">
-          <Card card = {this.state.members[0]}/>
-          <Card card = {this.state.members[1]}/>
-          <Card card = {this.state.members[2]}/>
-          <Card card = {this.state.members[3]}/>
-          <Card card = {this.state.members[4]}/>
+        <div className="about-container">
+          <p> About Us</p>
+          <div className="about">
+            <Card card = {this.state.members[0]}/>
+            <Card card = {this.state.members[1]}/>
+            <Card card = {this.state.members[2]}/>
+            <Card card = {this.state.members[3]}/>
+            <Card card = {this.state.members[4]}/>
+          </div>
         </div>
       </>
     );

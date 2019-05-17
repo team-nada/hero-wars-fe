@@ -5,6 +5,7 @@ import App from './components/app.js';
 import Game from './components/game.js';
 import About from './components/about.js';
 import Rules from './components/rules.js';
+import Win from './components/win.js';
 import './scss/core.scss';
 
 const routing = (
@@ -22,6 +23,13 @@ const routing = (
       <Route path="/game" component={Game} />
       <Route path="/rules" component={Rules} />
       <Route path="/about" component={About} />
+      <Route path="/win"
+        render={(routeProps) => (
+          <Win playersScore={routeProps.playersScore}
+          computerScore={routeProps.computerScore}
+          handleMainMenu={routeProps.handleMainMenu}
+          handlePlayAgain={routeProps.handlePlayAgain} />
+  )}/>
     </>
   </Router>
 );

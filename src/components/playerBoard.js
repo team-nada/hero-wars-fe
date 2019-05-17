@@ -10,17 +10,30 @@ class PlayerBoard extends React.Component {
   render(){
     let cards = [];
     if(this.props.hand){
-      cards = this.props.hand.map((card, i) => <li key={i}> <Card card={card} owner={'player'} handleClickFunction={this.props.handleClickFunction}/></li>);
+      cards = this.props.hand.map((card, i) => <li key={i}> <Card card={card} handId={i} owner={'player'} handleClickFunction={this.props.handleClickFunction}/></li>);
     }
 
-    return (
-      <div>
-        <Card card={this.props.activeCard}
-          owner={'player'}
-          handleClickFunction={this.props.handleClickFunction}/>
-        <PlayerHand>{cards}</PlayerHand>
-      </div>
-    );
+    if (this.props.activeCard.name === 'standby') {
+      return (
+        <>
+        <div className="player-board">
+          <div className="placeholder">Click a card to play</div>
+          <PlayerHand>{cards}</PlayerHand>
+        </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+        <div className="player-board">
+          <Card card={this.props.activeCard}
+            owner={'player'}
+            handleClickFunction={this.props.handleClickFunction}/>
+          <PlayerHand>{cards}</PlayerHand>
+        </div>
+        </>
+      );
+    }
   }
 }
 
