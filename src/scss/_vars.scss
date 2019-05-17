@@ -4,7 +4,17 @@
 $card-back: url(../images/card-back.png);
 $card-lay: url(../images/cardLay.png);
 
+$about-card-width: 9.5em;
+$about-card-height: 12.5em;
+$about-card-h2-font-size: 16px;
+$about-card-width-img: 138px;
+$about-card-height-img: 103px;
+$about-card-margin-top: 24px;
+
 /************************
     Color Variables
 *************************/
 $sub-header-background-color: #1a2546;
+$rule-column-background-color: rgba(255, 255, 255, 0.8);
+$nav-background-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(105, 136, 204) 100%);
+$nav-hover-background-color: rgba(255, 255, 255,0.9);

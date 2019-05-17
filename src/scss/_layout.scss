@@ -7,8 +7,7 @@ body{
   Nav Componenent CSS 
 *************************/
 nav{
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(105, 136, 204) 100%);
+  background: $nav-background-color;
   height: 25px;
   font-family: 'Oswald', sans-serif;
   z-index: 1;
@@ -40,7 +39,7 @@ nav{
   color: rgb(78, 77, 77);
   border-radius: 5px;
   transition: all 0.5s ease;
-  background-color: rgba(255, 255, 255,0.9);
+  background-color: $nav-hover-background-color;
 }
 
 /***********************
@@ -222,7 +221,7 @@ label {
   .final-results-2{
     position: absolute;
     top: 250px;
-    left: 270px;
+    left: 395px;
     font-size: 50px;
     color: Black;
   }
