@@ -1,13 +1,13 @@
-//https://www.w3schools.com/css/css3_buttons.asp
+body{
+  background-image: url(../images/comic_background.jpg);
+  background-size: cover;
+}
 
-@import url('https://fonts.googleapis.com/css?family=Oswald:700');
-@import url('https://fonts.googleapis.com/css?family=Stardos+Stencil');
-@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
-@import url('https://fonts.googleapis.com/css?family=Wallpoet');
-
+/***********************
+  Nav Componenent CSS 
+*************************/
 nav{
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(105, 136, 204) 100%);
+  background: $nav-background-color;
   height: 25px;
   font-family: 'Oswald', sans-serif;
   z-index: 1;
@@ -39,11 +39,13 @@ nav{
   color: rgb(78, 77, 77);
   border-radius: 5px;
   transition: all 0.5s ease;
-  background-color: rgba(255, 255, 255,0.9);
+  background-color: $nav-hover-background-color;
 }
 
+/***********************
+  Home Componenent CSS 
+*************************/
 .intro-title {
-  // margin-top: 200px;
   font-size: 120px;
   font-family: 'Wallpoet', cursive;
 }
@@ -79,11 +81,6 @@ label {
   color: white;
 }
 
-.home-container {
-  height: 95vh;
-  background-image: url(../images/comic_background.jpg);
-}
-
 .splash{
   padding-top: 120px;
 }
@@ -113,11 +110,10 @@ label {
 
 .card {
   text-align: center;
-  // border: 1px solid black;
   width: 6.5em;
   margin: 0 auto;
   height: 8.5em;
-  background-image: url(../images/cardLay.png);
+  background-image: $card-lay;
   background-size: cover;
   position: relative;
   border-radius: 10px;
@@ -130,25 +126,30 @@ label {
     position: absolute;
     top: 6px;
     left: 10.5px;
-    font-size: 9px;
+    font-size: 10px;
     color: white;
+    font-family: 'Duru Sans', sans-serif;
+
   }
   h3{
+    font-family: 'Duru Sans', sans-serif;
     color: white;
-    font-size: 12.5px;
+    font-size: 14px;
     padding-top: 17px;
   
   }
   img {
-    margin-top: 17px;
-    width: 94px;
-    height: 70px;
+    margin-top: 16px;
+    width: 95px;
+    height: 71px;
     z-index: 1;
+    object-fit:cover;
+    object-position:50% 50%;
   }
 }
 
 .computer-hand .card {
-  background-image: url(../images/card-back.png);
+  background-image: $card-back;
 
   h3 {
     position: relative;
@@ -158,11 +159,13 @@ label {
 
 .placeholder {
   border: 1px dashed black;
+  background-color: rgba(143, 96, 96, 0.4);
   width: 6.5em;
   margin: 0 auto;
   height: 8.5em;
-  padding-top: 4em;
+  padding: 2.5em 1em;
   position: relative;
+  font-family: 'Duru Sans', sans-serif;
 
 
   h1 {
@@ -180,17 +183,11 @@ label {
   }
 }
 
-
-.gameBoard {
-  background-image: url(../images/comic_background.jpg);
-  height: 95vh;
-  background-size: cover;
-}
 .pVSc{
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   font-family: 'Bungee Shade', cursive;
-  background-color: darkblue;
+  background-color: $sub-header-background-color;
   margin-bottom: 20px;
   padding: 10px;
   width: 100%;
@@ -208,12 +205,9 @@ label {
   }
 }
 
-
-
 .win-page{
-  background-image: url(../images/comic_background.jpg);
   font-family: 'Oswald', sans-serif;
-  height: 700px;
+  height: 98vh;
   position: relative;
  
   .final-results-1{
@@ -227,11 +221,11 @@ label {
   .final-results-2{
     position: absolute;
     top: 250px;
-    left: 270px;
+    left: 395px;
     font-size: 50px;
     color: Black;
   }
-  
+    //https://www.w3schools.com/css/css3_buttons.asp
     .button {
       background-color: darkred; /* Green */
       border: none;
@@ -253,8 +247,8 @@ label {
       border: 2px solid darkred;
       position: absolute;
       top: 350px;
-      left: 400px;
-      right: 200px;
+      // left: 500px;
+      left: 670px;
 
     }
     .button-1:hover{
@@ -267,8 +261,8 @@ label {
       border: 2px solid darkred;
       position: absolute;
       top: 350px;
-      left: 700px;
-      right: 300px;
+      // left: 700px;
+      right: 670px;
     }
     .button-2:hover{
       background-color: darkred;
